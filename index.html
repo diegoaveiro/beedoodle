@@ -8,460 +8,569 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     <title>Beedoodle</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        display: flex;
-        flex-direction: column;
-        /* flex-wrap: wrap;
-        align-content: center;
-        justify-content: center;
-        align-items: center; */
-        font-family: 'Roboto', sans-serif;
-      }
-
-      #content {
-        max-width: 40vw;
-        margin: 2vh 0 0 30vw;
-      }
-
-      input {
-        position: fixed;
-        top: 0;
-        left: 30vw;
-        width: 40vw;
-        height: 5vh;
-        border-radius: 6px;
-      }
-
-      /* Estilo para destacar a palavra-chave */
-      .highlight {
-          background-color: yellow;
-          font-weight: bold;
-      }
-
-      /* Estilo para esconder elementos */
-      .hidden {
-          display: none;
-      }
-
-      /* Estilo para os títulos */
-      .title {
-          font-size: 1.2em;
-          font-weight: bold;
-          margin-bottom: 5px;
-      }
-
-      /* Estilo para a barra lateral */
-      #sidebar {
-          display: flex;
-          flex-wrap: nowrap;
-          flex-direction: column;
-          align-content: flex-start;
-          justify-content: flex-start;
-          align-items: flex-start;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 20vw;
-          overflow-y: auto;
-          margin: 1vw;
-          height: 100%; /* Ocupa toda a altura da janela para adicionar uma barra de rolagem */
-      }
-
-      p {
-        text-transform: lowercase;
-        margin: 1em 0;
-        text-align: justify;
-      }
-
-      @media (max-width: 768px) {
-        #content {
-            max-width: 60vw;
-            margin: 3vh 0 0 30vw;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        
+
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #content {
+            max-width: 40vw;
+            margin: 2vh 0 0 30vw;
+            display: none; /* Oculta o conteúdo inicialmente */
+        }
+
         input {
-            width: 60vw;
+            position: fixed;
+            top: 0;
+            left: 30vw;
+            width: 40vw;
+            height: 5vh;
             border-radius: 6px;
         }
 
+        /* Estilo para destacar a palavra-chave */
+        .highlight {
+            background-color: yellow;
+            font-weight: bold;
+        }
+
+        /* Estilo para esconder elementos */
+        .hidden {
+            display: none;
+        }
+
+        /* Estilo para os títulos */
+        .title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        /* Estilo para a barra lateral */
         #sidebar {
-            width: 25vw;
+            display: flex;
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-content: flex-start;
+            justify-content: flex-start;
+            align-items: flex-start;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20vw;
+            overflow-y: auto;
             margin: 1vw;
-        }    
-      } 
-  </style>
+            height: 100%; /* Ocupa toda a altura da janela para adicionar uma barra de rolagem */
+        }
+
+        p {
+            text-transform: lowercase;
+            margin: 1em 0;
+            text-align: justify;
+        }
+
+        @media (max-width: 768px) {
+            #content {
+                max-width: 60vw;
+                margin: 3vh 0 0 30vw;
+            }
+
+            input {
+                width: 60vw;
+                border-radius: 6px;
+            }
+
+            #sidebar {
+                width: 25vw;
+                margin: 1vw;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <div>
-        <input type="text" id="searchInput" placeholder="Digite a palavra-chave" oninput="searchAndHighlight()">
-    </div>
+<div>
+    <input type="text" id="searchInput" placeholder="Digite a palavra-chave" oninput="searchAndHighlight()">
+</div>
 
-    <div id="content">
-      <div class="item">
-        <p class="title">FATURA - ESTRUTURA E ELEMENTOS</p>
-        <p>Está disponível na área de cliente um documento com a explicação dos vários elementos da fatura para consulta.</p>
-        <p>Algumas considerações a ter na fatura:</p>
-        <p>A mensalidade do serviço é referente ao mês atual;</p>
-        <p>Os consumos são respeitantes ao mês anterior (chamadas/SMS fora do plano contratado, VoD, extraplafond, etc);</p>
-        <p>Os valores em atraso são referentes a meses anteriores;</p>
-        <p>Os débitos / créditos atribuídos correspondem a inserções no mês anterior.</p>
+<div id="content">
+  <div class="item">
+    <p class="title">FATURA - ESTRUTURA E ELEMENTOS</p>
+    <p>Está disponível na área de cliente um documento com a explicação dos vários elementos da fatura para consulta.</p>
+    <p>Algumas considerações a ter na fatura:</p>
+    <p>A mensalidade do serviço é referente ao mês atual;</p>
+    <p>Os consumos são respeitantes ao mês anterior (chamadas/SMS fora do plano contratado, VoD, extraplafond, etc);</p>
+    <p>Os valores em atraso são referentes a meses anteriores;</p>
+    <p>Os débitos / créditos atribuídos correspondem a inserções no mês anterior.</p>
+</div>
+<div class="item">
+    <p class="title">INFORMAÇÃO DE FIM DE FIDELIZAÇÃO E PENALIZAÇÃO POR SERVIÇO</p>
+    <p>É disponibilizada em fatura a informação correspondente à simulação do valor das penalizações, se aplicáveis, no caso de rescisão de contrato à data de emissão da fatura. Essas penalizações são discriminadas por serviço fixo e móvel.</p>
+    <p>É também indicada a data do fim de fidelização de cada serviço.</p>
+    <p>No caso de algum dos serviços estar a menos de 3 meses do fim de fidelização é apresentada uma mensagem adicional com essa informação e sugestão para o passo seguinte:</p>
+</div>
+<div class="item">
+    <p class="title">TIPO / LAYOUT</p>
+    <p>O cliente pode optar em qualquer momento por um dos três layouts de fatura que se encontram disponíveis, em formato físico (papel) ou digital (fatura eletrónica)</p>
+    <p>As faturas não têm custos para o cliente, excepto se optar por fatura com detalhe máximo em papel, que terá o custo de 1,22€.</p>
+    <p>FATURA SEM DETALHE</p>
+    <p>Pode-se consultar em formato resumido a movimentação de saldo, sem indicação de serviços ou consumos efetuados.</p>
+    <p>FATURA COM DETALHE MÍNIMO</p>
+    <p>Apenas contém detalhe dos serviços, não discriminando as comunicações feitas pelo cliente.</p>
+    <p>FATURA COM DETALHE MÁXIMO</p>
+    <p>Tem o detalhe de todos os serviços subscritos pelo cliente e o extrato das comunicações ou consumos que efetuou. </p>
+    <p>As alterações de tipo de fatura ficam refletidas apenas na fatura do mês seguinte. Não é possível alterar detalhe de faturas já emitidas. </p>
+    <p>Em Nexus aceder a Faturação » Tipo de Factura e selecionar o tipo de fatura e os serviços a detalhar pretendidos:</p>
+    <p>Se Nexus indisponível, alterar em Procable: Página 3, Controle de imp.de det.do evento - inserir 9 e Enter. Selecionar S ou N consoante o pretendido para os vários serviços. Fazer GR.</p>
+</div>
+    <div class="item">
+        <p class="title">CONSULTA DE FATURA</p>
+        <p>O cliente pode consultar a fatura na sua área de cliente.</p>
+        <p>A consulta da fatura pode ser feita através de:</p>
+        <p>Nexus - Permite visualizar a fatura conforme o cliente a recebeu:</p> 
+        <p>Aceder a Faturação » Faturas em PDF. Clicar em Listar Faturas. Selecionar a fatura pretendida. Clicar em Ver PDF.</p>
+        <p>Procable: Página 13. Inserir o número correspondente à fatura que se pretende consultar. inserir o número da fatura e Enter.</p>
     </div>
     <div class="item">
-        <p class="title">INFORMAÇÃO DE FIM DE FIDELIZAÇÃO E PENALIZAÇÃO POR SERVIÇO</p>
-        <p>É disponibilizada em fatura a informação correspondente à simulação do valor das penalizações, se aplicáveis, no caso de rescisão de contrato à data de emissão da fatura. Essas penalizações são discriminadas por serviço fixo e móvel.</p>
-        <p>É também indicada a data do fim de fidelização de cada serviço.</p>
-        <p>No caso de algum dos serviços estar a menos de 3 meses do fim de fidelização é apresentada uma mensagem adicional com essa informação e sugestão para o passo seguinte:</p>
+        <p class="title">CONSULTA DE FATURA NO E-FATURA</p>
+        <p>Caso um cliente indique que determinada e-fatura não aparece no portal das Finanças, devem indicar o procedimento de consulta indicado abaixo.</p>
+        <p>De salientar, que as faturas emitidas só estarão disponíveis para consulta no e-fatura no mês seguinte à data de emissão.</p>
+        <p>PROCESSO DE CONSULTA CLIENTE:</p>
+        <p>O cliente visualiza pela opção de “Adquirente”:</p>
+        <p>Colocando o NIF (503062081) no campo “NIF Emitente” e o intervalo de datas pretendido:</p>
     </div>
     <div class="item">
-        <p class="title">TIPO / LAYOUT</p>
-        <p>O cliente pode optar em qualquer momento por um dos três layouts de fatura que se encontram disponíveis, em formato físico (papel) ou digital (fatura eletrónica)</p>
-        <p>As faturas não têm custos para o cliente, excepto se optar por fatura com detalhe máximo em papel, que terá o custo de 1,22€.</p>
-        <p>FATURA SEM DETALHE</p>
-        <p>Pode-se consultar em formato resumido a movimentação de saldo, sem indicação de serviços ou consumos efetuados.</p>
-        <p>FATURA COM DETALHE MÍNIMO</p>
-        <p>Apenas contém detalhe dos serviços, não discriminando as comunicações feitas pelo cliente.</p>
-        <p>FATURA COM DETALHE MÁXIMO</p>
-        <p>Tem o detalhe de todos os serviços subscritos pelo cliente e o extrato das comunicações ou consumos que efetuou. </p>
-        <p>As alterações de tipo de fatura ficam refletidas apenas na fatura do mês seguinte. Não é possível alterar detalhe de faturas já emitidas. </p>
-        <p>Em Nexus aceder a Faturação » Tipo de Factura e selecionar o tipo de fatura e os serviços a detalhar pretendidos:</p>
-        <p>Se Nexus indisponível, alterar em Procable: Página 3, Controle de imp.de det.do evento - inserir 9 e Enter. Selecionar S ou N consoante o pretendido para os vários serviços. Fazer GR.</p>
+        <p class="title">Envio de Fatura</p>
+        <p>A fatura dos serviços é enviada ao cliente mensalmente por dois meios, email e correspondência em papel, podendo o cliente optar de que forma a pretende receber.</p>
+        <p>As faturas estão também disponíveis para consulta na Área de Cliente (últimos 6 meses) a partir do dia 6 de cada mês, independentemente do modo de envio.</p>
     </div>
-        <div class="item">
-            <p class="title">CONSULTA DE FATURA</p>
-            <p>O cliente pode consultar a fatura na sua área de cliente.</p>
-            <p>A consulta da fatura pode ser feita através de:</p>
-            <p>Nexus - Permite visualizar a fatura conforme o cliente a recebeu:</p> 
-            <p>Aceder a Faturação » Faturas em PDF. Clicar em Listar Faturas. Selecionar a fatura pretendida. Clicar em Ver PDF.</p>
-            <p>Procable: Página 13. Inserir o número correspondente à fatura que se pretende consultar. inserir o número da fatura e Enter.</p>
-        </div>
-        <div class="item">
-            <p class="title">CONSULTA DE FATURA NO E-FATURA</p>
-            <p>Caso um cliente indique que determinada e-fatura não aparece no portal das Finanças, devem indicar o procedimento de consulta indicado abaixo.</p>
-            <p>De salientar, que as faturas emitidas só estarão disponíveis para consulta no e-fatura no mês seguinte à data de emissão.</p>
-            <p>PROCESSO DE CONSULTA CLIENTE:</p>
-            <p>O cliente visualiza pela opção de “Adquirente”:</p>
-            <p>Colocando o NIF (503062081) no campo “NIF Emitente” e o intervalo de datas pretendido:</p>
-        </div>
-        <div class="item">
-            <p class="title">Envio de Fatura</p>
-            <p>A fatura dos serviços é enviada ao cliente mensalmente por dois meios, email e correspondência em papel, podendo o cliente optar de que forma a pretende receber.</p>
-            <p>As faturas estão também disponíveis para consulta na Área de Cliente (últimos 6 meses) a partir do dia 6 de cada mês, independentemente do modo de envio.</p>
-        </div>
-        <div class="item">
-            <p class="title">FATURA ELETRÓNICA</p>
-            <p>Vantagens para o cliente: Recebe de forma mais rápida; Sem extravios; Não tem custos associados; Mais sustentável. Desconto de 1 euro.</p>
-            <p>Para ativação / alteração à fatura eletrónica, validar NIF e BI/CC.</p>
-            <p>Informar o cliente que através da área de cliente pode fazer a gestão da fatura eletrónica, de forma autónoma: Adesão; Alteração do email; Cancelamento.</p>
-            <p>Caso o cliente pretenda o cancelamento da fatura eletrónica, informar dos custos associados ao envio em papel, se aplicáveis.</p>               
-            <p>CONSULTA:</p>
-            <p>Em Nexus, consultar o estado da adesão em Faturação » Pré-adesão à Fatura Eletrónica » Consulta de Pedidos.</p>
-            <p>Em Procable, consultar: Página 3 - se os campos abaixo estiverem preenchidos, cliente tem a fatura eletrónica ativa. email - endereço de email onde foi ativada a fatura eletrónica. Confirmação FE - data em que foi ativada a fatura eletrónica.</p>
-            <p>ATIVAÇÃO:</p> 
-            <p>Em Nexus, aceder a Faturação » Pré-adesão à Fatura Eletrónica » Adesão.</p>
-            <p>Preencher os campos email e Confirmar email com o email indicado pelo cliente. Clicar em Aderir. Será enviado um link para o email indicado, com validade de 7 dias, ao qual o cliente terá de aceder para confirmar a adesão. Caso o link expire, será necessário fazer um novo pedido.</p>
-            <p>Todos os clientes que aderirem à fatura eletrónica recebem o crédito do custo administrativo, que será refletido na primeira fatura eletrónica enviada, ou seja, no mês seguinte à adesão.</p>
-            <p>ALTERAÇÃO / CORREÇÃO:</p>
-            <p>Qualquer alteração apenas terá efeitos na fatura seguinte. Se o cliente pretender receber uma fatura referente a um mês anterior, consultar procedimento de envio de segunda via de fatura abaixo.</p>
-            <p>Em Nexus, aceder a Faturação » Pré-adesão à Fatura Eletrónica » Alteração. Preencher os campos Novo email e Confirmar Novo email com o email indicado pelo cliente. Clicar em Alterar.</p>
-            <p>DESATIVAÇÃO:</p>
-            <p>Em Nexus, aceder a Faturação » Pré-adesão à Fatura Eletrónica » Cancelamento. Clicar em Cancelar.</p>
-            <p>No caso da fatura do cliente ter Detalhe Máximo, passa a existir um custo associado ao envio da fatura em papel de 1,22€.</p>
-        </div>
-        <div class="item">    
-            <p class="title">ERROS NA ADESÃO / ENVIO DE FATURA ELETRÓNICA</p>
-            <p>Cliente indica que não recebeu email com o link para dar seguimento à adesão:</p>
-            <p>Questionar se o email foi para a caixa de Spam ou lixo eletrónico; Conta Hotmail: se não for utilizada com frequência, entra em inatividade e após cliente fazer o login não irá receber os emails enviados anteriormente.</p>
-            <p>Como alternativa, cliente pode ser encaminhado para fazer a adesão via área de cliente.</p>
-            <p>Cliente ainda não tem serviços ativos:</p>
-            <p>Pedir para efetuar novo pedido após data de instalação. </p>
-            <p>Cliente indica que está a ser faturado de custos administrativos:</p>
-            <p>Verificar em Procable: Página 4. Código OTV com data Instal nesse mês - indicar que o crédito vai constar na próxima fatura. Código OTV inexistente ou com data Corte preenchida - inserir ticket via Nexus para análise.</p>
-            <p>Pedido de ativação em curso:</p>
-            <p>Indicar ao cliente que o pedido está a aguardar conclusão.</p>
-            <p>Cliente tem a fatura eletrónica ativa, mas não recebe:</p>
-            <p>Questionar se o email foi para a caixa de Spam ou lixo eletrónico; Sugerir que adicione aos contactos o email de onde é enviada a fatura: empresa.fe.pt@cgi.com; Em Nexus, aceder a Faturação » Faturas em PDF » Selecionar Fatura e verificar a coluna Tipo de Erro.</p>
-        </div>
-        <div class="item">
-            <p class="title">FATURA EM PAPEL</p>
-            <p>As faturas em papel começam a ser entregues aos clientes sensivelmente uma semana após a sua emissão pela empresa. Dependendo do nível de detalhe escolhido pelo cliente, o seu envio pode ser um custo associado.</p>
-            <p>DISTRIBUIÇÃO:</p>
-            <p>A entrega das faturas em papel é assegurada por duas empresas de distribuição: CTT e PGM. É possível identificar qual a distribuidora consultando o cabeçalho da fatura do cliente:</p>
-            <p>PGM: QR CODE.</p>
-            <p>CTT: sem QR CODE.</p>
-            <p>Caso um cliente reclame não ter recebido a fatura em papel, o primeiro passo será sempre confirmar se a morada de faturação está correta. Se estiver e se verifique tratar-se de uma questão recorrente, deve ser feito o seguinte (consoante a empresa de distribuição):</p>
-            <p>PGM - reportar a situação para a área de Customer Service com os devidos despistes e o máximo de informação possível, para validação da questão junto da empresa distribuidora;</p>
-            <p>CTT - dado que as faturas seguem sem registo, o cliente deve validar junto dos Correios da sua zona o que possa estar a acontecer.</p>
-            <p>Em ambos os casos e de forma a evitar este tipo de situações, deve ser efetuada a promoção da Área de Cliente, bem como da Fatura Eletrónica.</p>
-        </div>
-        <div class="item">  
-            <p class="title">ENVIO DE segunda VIA</p>
-            <p>Para enviar a segunda via da fatura é obrigatório validar os seguintes dados:</p>
-            <p>Número de Cliente; NIF; Morada de faturação do serviço; Endereço de email associado ao envio da Fatura Eletrónica (se o cliente a tiver ativa).</p>
-            <p>No caso de o cliente ter a FE ativa, o envio apenas pode ser feito para o endereço de email associado à mesma. Se pretender que seja disponibilizada para outro endereço, terá em primeiro lugar de o definir como email para envio regular de FE - apenas após a conclusão dessa ação é então possível o envio da segunda via.</p>
-            <p>Se o cliente não tiver FE ativa, o envio por email deve ser feito para o endereço associado à conta de cliente em Procable (se não tiver nenhum, deve ser atualizado com o que ele forneça).</p>
-            <p>Caso pretenda envio da segunda via da fatura em papel, deve ser considerada a morada de faturação da conta de cliente. Se esta não estiver correta, deve ser pedida a retificação e depois solicitado o envio do documento.</p>
-            <p>Se o cliente não aceitar as opções acima, informar que tem sempre as faturas dos últimos 6 meses disponíveis para consulta na sua Área de Cliente.</p>
-            <p>O prazo máximo para envio da segunda via é de: Imediato, via email; 48 horas, via CTT. Não existe prazo limite para um cliente solicitar a segunda via de uma fatura.</p>
-            <p>No contacto com o cliente:</p>
-            <p>Informar que pode consultar as faturas dos últimos 6 meses na sua área de cliente.
-            <p>Se o cliente mantiver o pedido, sugerir sempre o envio da segunda via da fatura através de email.</p>
-            <p>Apenas se não houver alternativa, deve ser enviado por CTT. Informar cliente do custo de 2,99€, exceto se houver registo de correspondência devolvida (na página 15), em que não deve ser cobrado esse valor.</p>
-            <p>A segunda via enviada é sempre igual à original, não sendo possível enviar detalhe de uma fatura sem detalhe ativo.</p>
-            <p>Segunda via ENVIO POR email:</p>
-            <p>Em Nexus, seguir pela ordem indicada:</p>
-            <p>Aceder a Faturação » Faturas em PDF » Listar Faturas. Selecionar fatura desejada. Clicar em Enviar por Email. É assumido automaticamente o email do cliente se registado em Procable.</p>
-            <p>Enviar para outro email:</p>
-            <p>Colocar um pisco em "Enviar para outro email" e preencher com o email indicado pelo cliente, caso não tenha FE ativa e não exista email registado. Clicar em Click para Enviar.</p>
-            <p>Segunda via ENVIO POR CTT:</p>
-            <p>Inserir ticket via Nexus:</p>
-            <p>Descrição - inserir a seguinte informação:</p> 
-            <p>Número da fatura a enviar; Indicar se é com ou sem custos; Indicar "morada confirmada" ou morada para a qual deve ser enviada a segunda via; Confirmar se existiu correspondência devolvida; Exemplo: “Enviar segunda via fatura de Junho 2022 com custos//morada confirmada, está correta//não existe indicação de correspondência devolvida”.</p>
-        </div>
-        <div class="item">
-            <p class="title">Ciclo de Faturação e Calendário de Cobranças</p>
-            <p>O ciclo de faturação e cobranças obedece a um calendário definido legalmente e em concordância com a entidade reguladora das telecomunicações, onde são estipulados os prazos para a execução dos processos, nomeadamente:</p>
-            <p>Comunicações e avisos aos clientes; Suspensão de serviços por falta de pagamento; Corte de serviços por falta de pagamento.</p>
-            <p>O ciclo de faturação segue o seguinte esquema:</p>
-            <p>mês 1, dia 1: primeira fatura. dia 21: data limite pagamento. dia 22: sms fatura em divida. dia 26: envio carta de suspensao: data limite +5 dias.</p> 
-            <p>mês 2, dia 1: segunda fatura. dia 21: data limite pagamento. dia 22: sms relembra pagamento. dia 26: sms aviso suspensão. dia 30: sms aviso suspensão</p>
-            <p>mês 3, dia 1: terceira fatura. dia 21: data limite pagamento. dia 22: sms relembra pagamento. dia 26: sms corte. dia 30: sms corte, ultima oportunidade</p>
-            <p>mês 4, dia 1: quarta fatura. penalizações. marcações dos cortes por falta de pagamento</p>
-        </div>
-        <div class="item">
-            <p class="title">Fidelização e Penalizações</p>
-            <p>A fidelização refere-se a um acordo celebrado entre a empresa e o cliente, em que aceita manter os serviços durante determinado período de tempo, beneficiando assim de vantagens ou ofertas. </p>
-            <p>São cobradas penalizações sempre que exista corte dos serviços (a pedido do cliente ou por falta de pagamento) durante a vigência de um contrato em período de fidelização. Dado que foram atribuídas vantagens nesse período, a quebra antecipada da permanência implica a cobrança dos valores correspondentes a essas ofertas.</p>
-            <p>Poderão existir cobranças adicionais se após o corte de serviços se verificar que não existiu a devolução de equipamentos cedidos a título de empréstimo pela empresa.</p>
-        </div>
-        <div class="item">
-            <p class="title">PERÍODO DE FIDELIZAÇÃO</p>
-            <p>A informação sobre o período de fidelização do cliente está disponível nas condições contratuais e na fatura, se o cliente tiver subscrito detalhe (mínimo ou máximo).</p>
-            <p>Se o cliente solicitar, pode ser enviada uma cópia do contrato com a informação referente à fidelização acordada.</p>
-            <p>Se existir alguma questão com a qual o cliente discorde (termos contratuais, valores de mensalidades, ofertas não atribuídas, etc.), deverá reportá-la de imediato à empresa. Se não o fizer e houver corte por falta de pagamento considera-se que o cliente está a agir de má-fé e, por esse motivo, terá de pagar as penalizações.</p>
-            <p>Caso o Cliente solicite informação sobre a data de fim de fidelização:</p>
-        </div>
-        <div class="item">
-            <p class="title">Queues Retenção e Renegociação:</p>
-            <p>Caso exista intenção de corte ou se o Cliente estiver menos 6 meses do fim fidelização, assistente deve dar seguimento ao processo para reter e/ou refidelizar o Cliente.</p>
-            <p>Não existe intenção de corte ou Cliente com fidelização superior a 6 meses, apurando que o pedido de informação é meramente informativo, a informação deve ser transmitida mediante validação dos dados CC e NIF.</p>
-            <p>Queues Overflow Retenção, Overflow Renegociação ou outras Queues:</p>
-            <p>Caso exista intenção de corte ou Cliente a menos de 6 meses do fim da fidelização, devem abrir ticket em GO para a respetiva equipa de retenção ou renegociação. Devem informar que a equipa irá analisar o contrato e entrará em contacto.</p>
-            <p>Caso o Cliente exija a informação a mesma pode ser facultada, mas devem sempre garantir que o Cliente aceita ser contactado.</p>
-            <p>Não existe intenção de corte ou Cliente com fidelização superior a 6 meses, apurando que o pedido de informação é meramente informativo, a informação deve ser transmitida mediante validação dos dados CC e NIF.</p>
-            <p>Informação que tem de constar no ticket:</p>
-            <p>RETENÇÃO:</p>
-            <p>Subject: Nº de Cliente + Pedido de corte (Exemplo: 12345678 – Pedido de Corte). Texto: Motivo de corte: é imprescindível perceber o motivo pelo qual o cliente pretende cortar; Data de fim de fidelização: colocar a data de fim da fidelização; Soluções apresentadas para resolver a questão do cliente sem sucesso: tentativa de resolução apresentada através de esclarecimentos/ações possíveis e motivo da recusa. Se não aplicável, colocar N/A e justifica; Informações adicionais: qualquer informação que considerem relevante partilhar; Horário em que o cliente não pode mesmo ser contactado: perguntar: “Existe algum horário em que não possa ser contactado?”, em vez pedir uma hora exata; Contacto: questionar em que contacto prefere receber a chamada (caso esse contacto não esteja na ficha, atualizar de acordo com o procedimento).</p>
-            <p>RENEGOCIAÇÃO:</p>
-            <p>Subject: Nº de Cliente + Pedido de renegociação (Exemplo: 12345678 – Pedido de renegociação). Texto: Data de fim de fidelização: colocar a data de fim da fidelização; Origem do pedido (apenas se cliente indicar): indicar se o cliente menciona que recebeu SMS, informação na fatura ou se apenas sabe que os descontos ou fidelização estão a terminar (ou já terminaram); Informação sobre adição de serviços: caso o cliente mencione que pretende aderir a algum serviço. Se não aplicável, colocar N/A; Informações adicionais: qualquer informação que considerem relevante partilhar; Horário em que o cliente não pode mesmo ser contactado: perguntar: “Existe algum horário em que não possa ser contactado?”, em vez pedir uma hora exata; Contacto: questionar em que contacto prefere receber a chamada (caso esse contacto não esteja na ficha, atualizar de acordo com o procedimento).</p>
-        </div>
-        <div class="item">
-            <p class="title">PENALIZAÇÕES POR QUEBRA ANTECIPADA DE CONTRATO</p>
-            <p>É possível simular o valor das penalizações sempre que um cliente se encontre fidelizado e cujo valor ainda não tenha sido lançado em fatura, nem esteja disponível na simulação da fatura do mês seguinte (ver em Procable - Qualquer Página » F » Enter).</p>
-            <p>Elegíveis para simulação de penalizações: 
-            <p>Pedidos de corte voluntários já inseridos com fidelização a decorrer; Pedidos de corte parcial do serviço fixo com fidelização a decorrer (ficando apenas com móvel ativo); Corte total hipotético (ainda não inserido), calculado ao dia corrente.</p>
-            <p>A penalização por corte de serviços é calculada conforme contrato do cliente, tendo em conta:</p>
-            <p>Ofertas atribuídas (inclui custos de instalação e exclui mensalidade de boxes); Na quebra antecipada da permanência, serão aplicados os valores correspondentes às ofertas referidas acima;</p>
-            <p>Situações excecionais:</p>
-            <p>Alteração de local de residência permanente, se não for possível prestar serviço equivalente na nova residência; Mudança imprevisível da residência permanente para outro país; Perda de emprego por iniciativa do empregador, que implique perda de rendimento mensal disponível de pelo menos 20%; Incapacidade para o trabalho, permanente ou temporária, de duração superior a 60 dias, que implique perda de rendimento mensal disponível de pelo menos 20%; Cortes pedidos dentro do Período de Livre Resolução.</p>
-        </div>
-        <div class="item">
-            <p class="title">Novas fórmulas de cálculo das penalizações por quebra do período de fidelização</p>
-            <p> As regras das fórmulas de cálculo das penalizações aplicáveis a contratos com fidelização foram faseadas:</p>
-            <p>14/11/2022 a 12/01/2023</p>
-            <p>Contratos em curso ou contratos assinados neste período que sejam novos contratos ou refidelizações com alteração da morada de instalação- continua a aplicar-se o modelo de cálculo de penalidades anterior (ou seja, o resultado da fórmula anterior que estava em uso). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. Contratos em curso ou assinados neste período que sejam refidelizações sem alteração da morada de instalação- aplica-se o novo modelo de cálculo (ou seja, o menor dos dois valores entre a fórmula antiga e a nova). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. 30% do valor das mensalidades vincendas.</p>
-            <p>A partir de 13/01/2023</p>
-            <p>Contratos em curso - Aplicam-se as regras definidas para o período de 14/11/2022 a 12/01/2023. Novos contratos ou refidelizações assinados neste período com alteração da morada de instalação -Aplica-se o novo modelo de cálculo (ou seja, o menor dos dois valores entre a fórmula antiga e a nova). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. 50% do valor das mensalidades vincendas, se a cessação ocorrer durante o primeiro ano de fidelização, e 30% do valor das mensalidades vincendas, se a cessação ocorrer durante o segundo ano de fidelização.Refidelizações assinadas neste período sem alteração da morada de instalação- aplica-se o novo modelo de cálculo (ou seja, o menor dos dois valores entre a fórmula antiga e a nova). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. 30% do valor das mensalidades vincendas.</p>
-            <p>O valor das penalizações e respetiva metodologia de cálculo são consultados em SFA - Penalizações.</p>
-            <p>A informação obtida trata-se de um valor aproximado: O cálculo no caso do corte total ainda não inserido é efetuado ao dia 01 do mês seguinte, não é efetuado o cálculo a 30 dias; Nos restantes casos, as atualizações são feitas diariamente (dias úteis).</p>
-            <p>Caso não se verifique elegibilidade para simulação, os valores poderão ser consultados através de: Histórico de débitos e créditos de penalizações em fatura em Nexus e Procable; Registo de envio de cartas em situações de incumprimento ou pedido de corte em Nexus.</p>
-            <p>Importante ter em atenção:</p>
-            <p>A informação que consta na fatura referente a penalizações, é relativa à data da emissão da fatura. Clientes com corte inserido não têm a informação das penalizações, pois estarão refletidas na última fatura emitida. Se tiver existido uma alteração ao contrato/refidelização, a regra para cálculo é da última alteração efetuada e não do contrato inicial. Se a data de corte é posterior à data de fim de fidelização, o cliente não será penalizado (independentemente do valor mencionado na carta).</p>
-        </div>
-        <div class="item">
-            <p class="title">TIPOS DE PENALIZAÇÃO POR QUEBRA DE CONTRATO - DETALHE</p>
-            <p>A aplicação das penalizações por incumprimento da fidelização obedece a regras que, se não forem cumpridas, pode levar à cobrança de valores indevidos.</p>
-            <p>Existem circunstâncias em que pode ser pedido o corte sem penalizações.</p>
-            <p>Sempre que há penalizações faturadas de forma indevida ou com valor incorreto deve ser solicitado o crédito em CTK, devidamente fundamentado.</p>
-            <p>Situações em que não são aplicadas penalizações:</p>
-            <p>Hospitalização ou internamento em lar do titular do serviço: pedido de corte fundamentado com declaração médica ou do lar a comprovar o estado clínico: No caso de o titular não poder assinar e não existir ninguém com poder de procuração, a declaração deve indicar explicitamente que o titular do contrato está incapacitado de assinar o pedido de corte;</p>
-            <p>Óbito do titular: mediante apresentação da certidão de óbito;</p>
-            <p>Titular em situação de desemprego comprovada: implica apresentação de comprovativo de desemprego com data de início posterior à contratação do serviço; Incapacidade para o trabalho, permanente ou temporária, de duração superior a 60 dias, que implique perda de rendimento mensal disponível de pelo menos 20%;</p>
-            <p>Alteração de local de residência permanente, se não for possível prestar serviço equivalente na nova residência; ​Mudança imprevisível da residência permanente para outro país;</p>
-            <p>Corte no prazo de 14 dias (a contar da data de adesão às condições contratuais): se cumpridas as regras de aplicabilidade descritas no separador abaixo;
-            <p>Clientes cuja fidelização já tenha terminado à data do corte.</p>
-        </div>
-        <div class="item">
-            <p class="title">PENALIZAÇÃO POR INCUMPRIMENTO DA FIDELIZAÇÃO</p>
-            <p>O cliente deve ser sempre informado de acordo com o que consta no contrato referente ao serviço.</p>
-            <p>Quando o cliente reclama o valor das penalizações e não cumpre os requisitos para isenção, tem de se validar a informação do contrato e como foi celebrado:</p>
-            <p>A partir de 14/11/2022:</p>
-            <p>Independentemente do canal de venda, o contrato deverá ter sido aceite/assinado. A aceitação do contrato é confirmada pela existência em Procable de uma ordem CW relativa ao contrato em questão. Validar que a informação no documento está correta e, caso o cliente solicite, é possível enviar uma cópia; se não estiver correta pedir as correções/crédito, sempre que aplicável. Se não existir documento de fidelização devidamente assinado/aceite, o cliente tem direito ao crédito das penalizações.</p>
-            <p>Até 13/11/2022:</p>
-            <p>Adesões via Telefone e Online: Se a iniciativa partiu do Cliente (via adesão on-line, inbound ou contacto reativo) não há obrigatoriedade de o cliente devolver o contrato assinado para que seja válido. Se a iniciativa partiu da empresa (campanhas proativas outbound) é necessário validar a existência de contrato assinado e as suas condições, através de uma ordem CW em Procable. Se não existir documento de fidelização assinado, o cliente tem direito ao crédito das penalizações.</p>
-            <p>NOTA: É exigida a disponibilização do contrato ao cliente até ao prazo máximo de 5 dias a contar da data de adesão, por e-mail ou carta.</p>
-            <p>Adesões Presenciais: Implica a existência de um contrato assinado. Se não existir documento de fidelização assinado, o cliente tem direito ao crédito das penalizações.</p>
-            <p>Ao analisar o contrato, validar se existe alguma indicação excecional que isente o cliente das penalizações, em caso de pedido de corte antes do fim da fidelização.</p>
-            <p>Para dar seguimento ao pedido de contestação de penalizações tem de se confirmar que o cliente já tem corte inserido, recebeu carta de penalizações e/ou as mesmas já foram faturadas. Depois, o pedido de contestação deve ser enviado para análise via ticket em Nexus.</p>
-            <p>A plataforma para consulta do contrato depende da forma de adesão:</p>
-            <p>Nexus » Informação de Cliente » FIS » Pesquisar » Selecionar Tipo Documento: Contrato » Ver PDF</p>
-        </div>
-        <div class="item">
-            <p class="title">PENALIZAÇÃO EM CORTES NOS PRIMEIROS 14 OU 30 DIAS DE CONTRATO</p>
-            <p>O período experimental de 14 ou 30 dias é aplicável a clientes que adiram a novos serviços com fidelização (NET, TV, TEL ou MÓVEL) ou refidelizem os que já têm contratados.</p>
-            <p>O cliente terá de ser notificado desse período de livre-resolução: No momento da assinatura do contrato; No envio do contrato por e-mail e/ou carta; No envio de e-mail para adesão aos produtos stand-alone Pós-Pago e Box IP.</p>
-            <p>Se o cliente não for notificado sobre o direito de livre resolução no prazo dos 14 dias, esse prazo passa a ser 12 meses. Um cliente que solicitou Port-Out (sem pedido de corte formalizado) e com direito aos 14 dias de livre resolução não deverá ser alvo de penalizações. ​Estas informações não deverão ser fornecidas ao cliente de forma proativa.</p>
-            <p>REGRAS: A resolução do contrato sem penalizações no período experimental tem regras para a contabilização, que variam dependendo da forma de adesão. Assim, os prazos aplicáveis são:</p>
-            <p>On-line – 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p>
-            <p>Door-to-door (D2D) – 30 dias a contar da data de assinatura do contrato;</p>
-            <p>Vendas Telefónicas - 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p> 
-            <p>Retalho – 30 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p>
-            <p>Lojas – 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito (não aplicável a adesões de novos clientes, apenas renegociações); No caso de novas adesões, havendo a assinatura do contrato em loja, não se aplica a livre resolução.</p>
-            <p>Na análise da informação do serviço móvel isolado, é necessário ter em atenção não só o canal de venda, mas também a data de adesão. Ver em Nexus: NÃO CLIENTES » MÓVEL empresa ISOLADO » PESQUISA DE PEDIDOS.</p>
-            <p>O canal de venda consulta-se na coluna GATEWAY:</p>
-            <p>EXP - GENÉRICO » Retalho. Validar o parceiro na página 2 do Procable: COMPARA JA / COMPARA MAIS / SELECTRA – Inbound. RESTANTES PARCEIROS - aplicam-se as regras definidas para o canal Retalho.</p>
-            <p>CA – Online</p>
-            <p>Loja – Lojas</p>
-            <p>Nexus – Inbound</p>
-            <p>A data de adesão está disponível na coluna DATA.</p>
-        </div>
-        <div class="item">
-            <p class="title">PENALIZAÇÃO POR MUDANÇA DE RESIDÊNCIA</p>
-            <p>Quando não é possível dar seguimento a um pedido de mudança de residência com fidelização em curso, o cliente poderá ser alvo de penalizações, aplicadas segundo as seguintes regras:</p>
-            <p>Zona sem cobertura empresa (Procable » Página 1 » Campo 10 » Razão da anulação: Código específico 46):</p>
-            <p>Clientes com fidelização há menos de 12 meses – penalização referente às ofertas associadas ao contrato de permanência + custos de instalação; Clientes com fidelização há mais de 12 meses – penalização referente apenas aos custos de instalação.</p>
-            <p>Zona com cobertura, mas sem sinal na morada (Procable » Página 1 » Campo 10 » Razão da anulação: Código específico 06):</p>
-            <p>Penalização referente apenas aos custos de instalação.</p>
-            <p>Nota: Clientes fidelizados onde há sinal na localidade, mas não na nova morada, deverá ser agendada uma deslocação ao local para se verificar a viabilidade. Só após esta deslocação é que será analisada a possibilidade de penalizar o cliente pelo custo de instalação ou de acordo com os patamares de fidelização. Esta informação deverá estar disponível apenas para a área que analisa a atribuição das penalizações, todas as outras áreas (nomeadamente Call Center) deverão dizer ao cliente que peça corte por motivo de MR que será sempre penalizado.</p>
-            <p>Zonas com cobertura e sinal na morada, mas cliente decide não instalar (Código específico 10 em Procable):</p>
-            <p>Penalização referente às ofertas associadas ao contrato permanência + custos de instalação.</p>
-            <p>As penalizações são calculadas pela regra em vigor. Se no pedido da mudança de residência o cliente ainda não tiver os documentos que comprovem a sua situação, deverá ser penalizado. O cliente deverá remeter estes documentos no prazo máximo de 3 meses para que seja efetuado o crédito (se se verificar a veracidade dos mesmos).</p>
-            <p>O cliente deve ser sempre informado das penalizações a aplicar tendo em conta a circunstância da nova morada. No caso de MR sem sinal, indicar a indisponibilidade de fazer a mudança e seguir o procedimento de corte.</p>
-        </div>
-        <!-- <div class="item">
-            <p class="title">Título 4</p>
-            <p>Conteúdo 4 - Teste de ocultar</p>
-            <p>Mais parágrafos para Título 4</p>
-        </div> -->
+    <div class="item">
+        <p class="title">FATURA ELETRÓNICA</p>
+        <p>Vantagens para o cliente: Recebe de forma mais rápida; Sem extravios; Não tem custos associados; Mais sustentável. Desconto de 1 euro.</p>
+        <p>Para ativação / alteração à fatura eletrónica, validar NIF e BI/CC.</p>
+        <p>Informar o cliente que através da área de cliente pode fazer a gestão da fatura eletrónica, de forma autónoma: Adesão; Alteração do email; Cancelamento.</p>
+        <p>Caso o cliente pretenda o cancelamento da fatura eletrónica, informar dos custos associados ao envio em papel, se aplicáveis.</p>               
     </div>
+    <div class="item">
+        <p class="title">PEDIDOS/ALTERAÇÕES - fatura eletrónica</p> 
+        <p>CONSULTA:</p>
+        <p>Em Nexus, consultar o estado da adesão em Faturação » Pré-adesão à Fatura Eletrónica » Consulta de Pedidos.</p>
+        <p>Em Procable, consultar: Página 3 - se os campos abaixo estiverem preenchidos, cliente tem a fatura eletrónica ativa. email - endereço de email onde foi ativada a fatura eletrónica. Confirmação FE - data em que foi ativada a fatura eletrónica.</p>
+        <p>ATIVAÇÃO:</p> 
+        <p>Em Nexus, aceder a Faturação » Pré-adesão à Fatura Eletrónica » Adesão.</p>
+        <p>Preencher os campos email e Confirmar email com o email indicado pelo cliente. Clicar em Aderir. Será enviado um link para o email indicado, com validade de 7 dias, ao qual o cliente terá de aceder para confirmar a adesão. Caso o link expire, será necessário fazer um novo pedido.</p>
+        <p>Todos os clientes que aderirem à fatura eletrónica recebem o crédito do custo administrativo, que será refletido na primeira fatura eletrónica enviada, ou seja, no mês seguinte à adesão.</p>
+        <p>ALTERAÇÃO / CORREÇÃO:</p>
+        <p>Qualquer alteração apenas terá efeitos na fatura seguinte. Se o cliente pretender receber uma fatura referente a um mês anterior, consultar procedimento de envio de segunda via de fatura abaixo.</p>
+        <p>Em Nexus, aceder a Faturação » Pré-adesão à Fatura Eletrónica » Alteração. Preencher os campos Novo email e Confirmar Novo email com o email indicado pelo cliente. Clicar em Alterar.</p>
+        <p>DESATIVAÇÃO:</p>
+        <p>Em Nexus, aceder a Faturação » Pré-adesão à Fatura Eletrónica » Cancelamento. Clicar em Cancelar.</p>
+        <p>No caso da fatura do cliente ter Detalhe Máximo, passa a existir um custo associado ao envio da fatura em papel de 1,22€.</p>
+    </div>
+    <div class="item">    
+        <p class="title">ERROS NA ADESÃO / ENVIO DE FATURA ELETRÓNICA</p>
+        <p>Cliente indica que não recebeu email com o link para dar seguimento à adesão:</p>
+        <p>Questionar se o email foi para a caixa de Spam ou lixo eletrónico; Conta Hotmail: se não for utilizada com frequência, entra em inatividade e após cliente fazer o login não irá receber os emails enviados anteriormente.</p>
+        <p>Como alternativa, cliente pode ser encaminhado para fazer a adesão via área de cliente.</p>
+        <p>Cliente ainda não tem serviços ativos:</p>
+        <p>Pedir para efetuar novo pedido após data de instalação. </p>
+        <p>Cliente indica que está a ser faturado de custos administrativos:</p>
+        <p>Verificar em Procable: Página 4. Código OTV com data Instal nesse mês - indicar que o crédito vai constar na próxima fatura. Código OTV inexistente ou com data Corte preenchida - inserir ticket via Nexus para análise.</p>
+        <p>Pedido de ativação em curso:</p>
+        <p>Indicar ao cliente que o pedido está a aguardar conclusão.</p>
+        <p>Cliente tem a fatura eletrónica ativa, mas não recebe:</p>
+        <p>Questionar se o email foi para a caixa de Spam ou lixo eletrónico; Sugerir que adicione aos contactos o email de onde é enviada a fatura: empresa.fe.pt@cgi.com; Em Nexus, aceder a Faturação » Faturas em PDF » Selecionar Fatura e verificar a coluna Tipo de Erro.</p>
+    </div>
+    <div class="item">
+        <p class="title">FATURA EM PAPEL</p>
+        <p>As faturas em papel começam a ser entregues aos clientes sensivelmente uma semana após a sua emissão pela empresa. Dependendo do nível de detalhe escolhido pelo cliente, o seu envio pode ser um custo associado.</p>
+        <p>DISTRIBUIÇÃO:</p>
+        <p>A entrega das faturas em papel é assegurada por duas empresas de distribuição: CTT e PGM. É possível identificar qual a distribuidora consultando o cabeçalho da fatura do cliente:</p>
+        <p>PGM: QR CODE.</p>
+        <p>CTT: sem QR CODE.</p>
+        <p>Caso um cliente reclame não ter recebido a fatura em papel, o primeiro passo será sempre confirmar se a morada de faturação está correta. Se estiver e se verifique tratar-se de uma questão recorrente, deve ser feito o seguinte (consoante a empresa de distribuição):</p>
+        <p>PGM - reportar a situação para a área de Customer Service com os devidos despistes e o máximo de informação possível, para validação da questão junto da empresa distribuidora;</p>
+        <p>CTT - dado que as faturas seguem sem registo, o cliente deve validar junto dos Correios da sua zona o que possa estar a acontecer.</p>
+        <p>Em ambos os casos e de forma a evitar este tipo de situações, deve ser efetuada a promoção da Área de Cliente, bem como da Fatura Eletrónica.</p>
+    </div>
+    <div class="item">  
+        <p class="title">ENVIO DE segunda VIA</p>
+        <p>Para enviar a segunda via da fatura é obrigatório validar os seguintes dados:</p>
+        <p>Número de Cliente; NIF; Morada de faturação do serviço; Endereço de email associado ao envio da Fatura Eletrónica (se o cliente a tiver ativa).</p>
+        <p>No caso de o cliente ter a FE ativa, o envio apenas pode ser feito para o endereço de email associado à mesma. Se pretender que seja disponibilizada para outro endereço, terá em primeiro lugar de o definir como email para envio regular de FE - apenas após a conclusão dessa ação é então possível o envio da segunda via.</p>
+        <p>Se o cliente não tiver FE ativa, o envio por email deve ser feito para o endereço associado à conta de cliente em Procable (se não tiver nenhum, deve ser atualizado com o que ele forneça).</p>
+        <p>Caso pretenda envio da segunda via da fatura em papel, deve ser considerada a morada de faturação da conta de cliente. Se esta não estiver correta, deve ser pedida a retificação e depois solicitado o envio do documento.</p>
+        <p>Se o cliente não aceitar as opções acima, informar que tem sempre as faturas dos últimos 6 meses disponíveis para consulta na sua Área de Cliente.</p>
+        <p>O prazo máximo para envio da segunda via é de: Imediato, via email; 48 horas, via CTT. Não existe prazo limite para um cliente solicitar a segunda via de uma fatura.</p>
+        <p>No contacto com o cliente:</p>
+        <p>Informar que pode consultar as faturas dos últimos 6 meses na sua área de cliente.
+        <p>Se o cliente mantiver o pedido, sugerir sempre o envio da segunda via da fatura através de email.</p>
+        <p>Apenas se não houver alternativa, deve ser enviado por CTT. Informar cliente do custo de 2,99€, exceto se houver registo de correspondência devolvida (na página 15), em que não deve ser cobrado esse valor.</p>
+        <p>A segunda via enviada é sempre igual à original, não sendo possível enviar detalhe de uma fatura sem detalhe ativo.</p>
+    </div>
+    <div class="item">  
+        <p class="title">Segunda via ENVIO POR email:</p>
+        <p>Em Nexus, seguir pela ordem indicada:</p>
+        <p>Aceder a Faturação » Faturas em PDF » Listar Faturas. Selecionar fatura desejada. Clicar em Enviar por Email. É assumido automaticamente o email do cliente se registado em Procable.</p>
+        <p>Enviar para outro email:</p>
+        <p>Colocar um pisco em "Enviar para outro email" e preencher com o email indicado pelo cliente, caso não tenha FE ativa e não exista email registado. Clicar em Click para Enviar.</p>
+    </div>
+    <div class="item">  
+        <p class="title">Segunda via ENVIO POR CTT:</p>
+        <p>Inserir ticket via Nexus:</p>
+        <p>Descrição - inserir a seguinte informação:</p> 
+        <p>Número da fatura a enviar; Indicar se é com ou sem custos; Indicar "morada confirmada" ou morada para a qual deve ser enviada a segunda via; Confirmar se existiu correspondência devolvida; Exemplo: “Enviar segunda via fatura de Junho 2022 com custos//morada confirmada, está correta//não existe indicação de correspondência devolvida”.</p>
+    </div>
+    <div class="item">
+        <p class="title">Ciclo de Faturação e Calendário de Cobranças</p>
+        <p>O ciclo de faturação e cobranças obedece a um calendário definido legalmente e em concordância com a entidade reguladora das telecomunicações, onde são estipulados os prazos para a execução dos processos, nomeadamente:</p>
+        <p>Comunicações e avisos aos clientes; Suspensão de serviços por falta de pagamento; Corte de serviços por falta de pagamento.</p>
+        <p>O ciclo de faturação segue o seguinte esquema:</p>
+        <p>mês 1, dia 1: primeira fatura. dia 21: data limite pagamento. dia 22: sms fatura em divida. dia 26: envio carta de suspensao: data limite +5 dias.</p> 
+        <p>mês 2, dia 1: segunda fatura. dia 21: data limite pagamento. dia 22: sms relembra pagamento. dia 26: sms aviso suspensão. dia 30: sms aviso suspensão</p>
+        <p>mês 3, dia 1: terceira fatura. dia 21: data limite pagamento. dia 22: sms relembra pagamento. dia 26: sms corte. dia 30: sms corte, ultima oportunidade</p>
+        <p>mês 4, dia 1: quarta fatura. penalizações. marcações dos cortes por falta de pagamento</p>
+    </div>
+    <div class="item">
+        <p class="title">Fidelização e Penalizações</p>
+        <p>A fidelização refere-se a um acordo celebrado entre a empresa e o cliente, em que aceita manter os serviços durante determinado período de tempo, beneficiando assim de vantagens ou ofertas. </p>
+        <p>São cobradas penalizações sempre que exista corte dos serviços (a pedido do cliente ou por falta de pagamento) durante a vigência de um contrato em período de fidelização. Dado que foram atribuídas vantagens nesse período, a quebra antecipada da permanência implica a cobrança dos valores correspondentes a essas ofertas.</p>
+        <p>Poderão existir cobranças adicionais se após o corte de serviços se verificar que não existiu a devolução de equipamentos cedidos a título de empréstimo pela empresa.</p>
+    </div>
+    <div class="item">
+        <p class="title">PERÍODO DE FIDELIZAÇÃO</p>
+        <p>A informação sobre o período de fidelização do cliente está disponível nas condições contratuais e na fatura, se o cliente tiver subscrito detalhe (mínimo ou máximo).</p>
+        <p>Se o cliente solicitar, pode ser enviada uma cópia do contrato com a informação referente à fidelização acordada.</p>
+        <p>Se existir alguma questão com a qual o cliente discorde (termos contratuais, valores de mensalidades, ofertas não atribuídas, etc.), deverá reportá-la de imediato à empresa. Se não o fizer e houver corte por falta de pagamento considera-se que o cliente está a agir de má-fé e, por esse motivo, terá de pagar as penalizações.</p>
+        <p>Caso o Cliente solicite informação sobre a data de fim de fidelização:</p>
+        <p>Queues Retenção e Renegociação:</p>
+        <p>Caso exista intenção de corte ou se o Cliente estiver menos 6 meses do fim fidelização, assistente deve dar seguimento ao processo para reter e/ou refidelizar o Cliente.</p>
+        <p>Não existe intenção de corte ou Cliente com fidelização superior a 6 meses, apurando que o pedido de informação é meramente informativo, a informação deve ser transmitida mediante validação dos dados CC e NIF.</p>
+        <p>Queues Overflow Retenção, Overflow Renegociação ou outras Queues:</p>
+        <p>Caso exista intenção de corte ou Cliente a menos de 6 meses do fim da fidelização, devem abrir ticket em GO para a respetiva equipa de retenção ou renegociação. Devem informar que a equipa irá analisar o contrato e entrará em contacto.</p>
+        <p>Caso o Cliente exija a informação a mesma pode ser facultada, mas devem sempre garantir que o Cliente aceita ser contactado.</p>
+        <p>Não existe intenção de corte ou Cliente com fidelização superior a 6 meses, apurando que o pedido de informação é meramente informativo, a informação deve ser transmitida mediante validação dos dados CC e NIF.</p>
+        <p>Informação que tem de constar no ticket:</p>
+        <p>RETENÇÃO:</p>
+        <p>Subject: Nº de Cliente + Pedido de corte (Exemplo: 12345678 – Pedido de Corte). Texto: Motivo de corte: é imprescindível perceber o motivo pelo qual o cliente pretende cortar; Data de fim de fidelização: colocar a data de fim da fidelização; Soluções apresentadas para resolver a questão do cliente sem sucesso: tentativa de resolução apresentada através de esclarecimentos/ações possíveis e motivo da recusa. Se não aplicável, colocar N/A e justifica; Informações adicionais: qualquer informação que considerem relevante partilhar; Horário em que o cliente não pode mesmo ser contactado: perguntar: “Existe algum horário em que não possa ser contactado?”, em vez pedir uma hora exata; Contacto: questionar em que contacto prefere receber a chamada (caso esse contacto não esteja na ficha, atualizar de acordo com o procedimento).</p>
+        <p>RENEGOCIAÇÃO:</p>
+        <p>Subject: Nº de Cliente + Pedido de renegociação (Exemplo: 12345678 – Pedido de renegociação). Texto: Data de fim de fidelização: colocar a data de fim da fidelização; Origem do pedido (apenas se cliente indicar): indicar se o cliente menciona que recebeu SMS, informação na fatura ou se apenas sabe que os descontos ou fidelização estão a terminar (ou já terminaram); Informação sobre adição de serviços: caso o cliente mencione que pretende aderir a algum serviço. Se não aplicável, colocar N/A; Informações adicionais: qualquer informação que considerem relevante partilhar; Horário em que o cliente não pode mesmo ser contactado: perguntar: “Existe algum horário em que não possa ser contactado?”, em vez pedir uma hora exata; Contacto: questionar em que contacto prefere receber a chamada (caso esse contacto não esteja na ficha, atualizar de acordo com o procedimento).</p>
+    </div>
+    <div class="item">
+        <p class="title">PENALIZAÇÕES POR QUEBRA ANTECIPADA DE CONTRATO</p>
+        <p>É possível simular o valor das penalizações sempre que um cliente se encontre fidelizado e cujo valor ainda não tenha sido lançado em fatura, nem esteja disponível na simulação da fatura do mês seguinte (ver em Procable - Qualquer Página » F » Enter).</p>
+        <p>Elegíveis para simulação de penalizações: 
+        <p>Pedidos de corte voluntários já inseridos com fidelização a decorrer; Pedidos de corte parcial do serviço fixo com fidelização a decorrer (ficando apenas com móvel ativo); Corte total hipotético (ainda não inserido), calculado ao dia corrente.</p>
+        <p>A penalização por corte de serviços é calculada conforme contrato do cliente, tendo em conta:</p>
+        <p>Ofertas atribuídas (inclui custos de instalação e exclui mensalidade de boxes); Na quebra antecipada da permanência, serão aplicados os valores correspondentes às ofertas referidas acima;</p>
+        <p>Situações excecionais:</p>
+        <p>Alteração de local de residência permanente, se não for possível prestar serviço equivalente na nova residência; Mudança imprevisível da residência permanente para outro país; Perda de emprego por iniciativa do empregador, que implique perda de rendimento mensal disponível de pelo menos 20%; Incapacidade para o trabalho, permanente ou temporária, de duração superior a 60 dias, que implique perda de rendimento mensal disponível de pelo menos 20%; Cortes pedidos dentro do Período de Livre Resolução.</p>
+        <p>Novas fórmulas de cálculo das penalizações por quebra do período de fidelização</p>
+        <p> As regras das fórmulas de cálculo das penalizações aplicáveis a contratos com fidelização foram faseadas:</p>
+        <p>14/11/2022 a 12/01/2023</p>
+        <p>Contratos em curso ou contratos assinados neste período que sejam novos contratos ou refidelizações com alteração da morada de instalação- continua a aplicar-se o modelo de cálculo de penalidades anterior (ou seja, o resultado da fórmula anterior que estava em uso). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. Contratos em curso ou assinados neste período que sejam refidelizações sem alteração da morada de instalação- aplica-se o novo modelo de cálculo (ou seja, o menor dos dois valores entre a fórmula antiga e a nova). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. 30% do valor das mensalidades vincendas.</p>
+        <p>A partir de 13/01/2023</p>
+        <p>Contratos em curso - Aplicam-se as regras definidas para o período de 14/11/2022 a 12/01/2023. Novos contratos ou refidelizações assinados neste período com alteração da morada de instalação -Aplica-se o novo modelo de cálculo (ou seja, o menor dos dois valores entre a fórmula antiga e a nova). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. 50% do valor das mensalidades vincendas, se a cessação ocorrer durante o primeiro ano de fidelização, e 30% do valor das mensalidades vincendas, se a cessação ocorrer durante o segundo ano de fidelização.Refidelizações assinadas neste período sem alteração da morada de instalação- aplica-se o novo modelo de cálculo (ou seja, o menor dos dois valores entre a fórmula antiga e a nova). Número de meses em falta X total das ofertas e descontos (vantagens associadas à fidelização)/número total de meses de fidelização. 30% do valor das mensalidades vincendas.</p>
+        <p>O valor das penalizações e respetiva metodologia de cálculo são consultados em SFA - Penalizações.</p>
+        <p>A informação obtida trata-se de um valor aproximado: O cálculo no caso do corte total ainda não inserido é efetuado ao dia 01 do mês seguinte, não é efetuado o cálculo a 30 dias; Nos restantes casos, as atualizações são feitas diariamente (dias úteis).</p>
+        <p>Caso não se verifique elegibilidade para simulação, os valores poderão ser consultados através de: Histórico de débitos e créditos de penalizações em fatura em Nexus e Procable; Registo de envio de cartas em situações de incumprimento ou pedido de corte em Nexus.</p>
+        <p>Importante ter em atenção:</p>
+        <p>A informação que consta na fatura referente a penalizações, é relativa à data da emissão da fatura. Clientes com corte inserido não têm a informação das penalizações, pois estarão refletidas na última fatura emitida. Se tiver existido uma alteração ao contrato/refidelização, a regra para cálculo é da última alteração efetuada e não do contrato inicial. Se a data de corte é posterior à data de fim de fidelização, o cliente não será penalizado (independentemente do valor mencionado na carta).</p>
+    </div>
+    <div class="item">
+        <p class="title">TIPOS DE PENALIZAÇÃO POR QUEBRA DE CONTRATO - DETALHE</p>
+        <p>A aplicação das penalizações por incumprimento da fidelização obedece a regras que, se não forem cumpridas, pode levar à cobrança de valores indevidos.</p>
+        <p>Existem circunstâncias em que pode ser pedido o corte sem penalizações.</p>
+        <p>Sempre que há penalizações faturadas de forma indevida ou com valor incorreto deve ser solicitado o crédito em CTK, devidamente fundamentado.</p>
+        <p>Situações em que não são aplicadas penalizações:</p>
+        <p>Hospitalização ou internamento em lar do titular do serviço: pedido de corte fundamentado com declaração médica ou do lar a comprovar o estado clínico: No caso de o titular não poder assinar e não existir ninguém com poder de procuração, a declaração deve indicar explicitamente que o titular do contrato está incapacitado de assinar o pedido de corte;</p>
+        <p>Óbito do titular: mediante apresentação da certidão de óbito;</p>
+        <p>Titular em situação de desemprego comprovada: implica apresentação de comprovativo de desemprego com data de início posterior à contratação do serviço; Incapacidade para o trabalho, permanente ou temporária, de duração superior a 60 dias, que implique perda de rendimento mensal disponível de pelo menos 20%;</p>
+        <p>Alteração de local de residência permanente, se não for possível prestar serviço equivalente na nova residência; ​Mudança imprevisível da residência permanente para outro país;</p>
+        <p>Corte no prazo de 14 dias (a contar da data de adesão às condições contratuais): se cumpridas as regras de aplicabilidade descritas no separador abaixo;
+        <p>Clientes cuja fidelização já tenha terminado à data do corte.</p>
+    </div>
+    <div class="item">
+        <p class="title">PENALIZAÇÃO POR INCUMPRIMENTO DA FIDELIZAÇÃO</p>
+        <p>O cliente deve ser sempre informado de acordo com o que consta no contrato referente ao serviço.</p>
+        <p>Quando o cliente reclama o valor das penalizações e não cumpre os requisitos para isenção, tem de se validar a informação do contrato e como foi celebrado:</p>
+        <p>A partir de 14/11/2022:</p>
+        <p>Independentemente do canal de venda, o contrato deverá ter sido aceite/assinado. A aceitação do contrato é confirmada pela existência em Procable de uma ordem CW relativa ao contrato em questão. Validar que a informação no documento está correta e, caso o cliente solicite, é possível enviar uma cópia; se não estiver correta pedir as correções/crédito, sempre que aplicável. Se não existir documento de fidelização devidamente assinado/aceite, o cliente tem direito ao crédito das penalizações.</p>
+        <p>Até 13/11/2022:</p>
+        <p>Adesões via Telefone e Online: Se a iniciativa partiu do Cliente (via adesão on-line, inbound ou contacto reativo) não há obrigatoriedade de o cliente devolver o contrato assinado para que seja válido. Se a iniciativa partiu da empresa (campanhas proativas outbound) é necessário validar a existência de contrato assinado e as suas condições, através de uma ordem CW em Procable. Se não existir documento de fidelização assinado, o cliente tem direito ao crédito das penalizações.</p>
+        <p>NOTA: É exigida a disponibilização do contrato ao cliente até ao prazo máximo de 5 dias a contar da data de adesão, por e-mail ou carta.</p>
+        <p>Adesões Presenciais: Implica a existência de um contrato assinado. Se não existir documento de fidelização assinado, o cliente tem direito ao crédito das penalizações.</p>
+        <p>Ao analisar o contrato, validar se existe alguma indicação excecional que isente o cliente das penalizações, em caso de pedido de corte antes do fim da fidelização.</p>
+        <p>Para dar seguimento ao pedido de contestação de penalizações tem de se confirmar que o cliente já tem corte inserido, recebeu carta de penalizações e/ou as mesmas já foram faturadas. Depois, o pedido de contestação deve ser enviado para análise via ticket em Nexus.</p>
+        <p>A plataforma para consulta do contrato depende da forma de adesão:</p>
+        <p>Nexus » Informação de Cliente » FIS » Pesquisar » Selecionar Tipo Documento: Contrato » Ver PDF</p>
+    </div>
+    <div class="item">
+        <p class="title">PENALIZAÇÃO EM CORTES NOS PRIMEIROS 14 OU 30 DIAS DE CONTRATO</p>
+        <p>O período experimental de 14 ou 30 dias é aplicável a clientes que adiram a novos serviços com fidelização (NET, TV, TEL ou MÓVEL) ou refidelizem os que já têm contratados.</p>
+        <p>O cliente terá de ser notificado desse período de livre-resolução: No momento da assinatura do contrato; No envio do contrato por e-mail e/ou carta; No envio de e-mail para adesão aos produtos stand-alone Pós-Pago e Box IP.</p>
+        <p>Se o cliente não for notificado sobre o direito de livre resolução no prazo dos 14 dias, esse prazo passa a ser 12 meses. Um cliente que solicitou Port-Out (sem pedido de corte formalizado) e com direito aos 14 dias de livre resolução não deverá ser alvo de penalizações. ​Estas informações não deverão ser fornecidas ao cliente de forma proativa.</p>
+        <p>REGRAS: A resolução do contrato sem penalizações no período experimental tem regras para a contabilização, que variam dependendo da forma de adesão. Assim, os prazos aplicáveis são:</p>
+        <p>On-line – 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p>
+        <p>Door-to-door (D2D) – 30 dias a contar da data de assinatura do contrato;</p>
+        <p>Vendas Telefónicas - 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p> 
+        <p>Retalho – 30 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p>
+        <p>Lojas – 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito (não aplicável a adesões de novos clientes, apenas renegociações); No caso de novas adesões, havendo a assinatura do contrato em loja, não se aplica a livre resolução.</p>
+        <p>Na análise da informação do serviço móvel isolado, é necessário ter em atenção não só o canal de venda, mas também a data de adesão. Ver em Nexus: NÃO CLIENTES » MÓVEL empresa ISOLADO » PESQUISA DE PEDIDOS.</p>
+        <p>O canal de venda consulta-se na coluna GATEWAY:</p>
+        <p>EXP - GENÉRICO » Retalho. Validar o parceiro na página 2 do Procable: COMPARA JA / COMPARA MAIS / SELECTRA – Inbound. RESTANTES PARCEIROS - aplicam-se as regras definidas para o canal Retalho.</p>
+        <p>CA – Online</p>
+        <p>Loja – Lojas</p>
+        <p>Nexus – Inbound</p>
+        <p>A data de adesão está disponível na coluna DATA.</p>
+    </div>
+    <div class="item">
+        <p class="title">PENALIZAÇÃO POR MUDANÇA DE RESIDÊNCIA</p>
+        <p>Quando não é possível dar seguimento a um pedido de mudança de residência com fidelização em curso, o cliente poderá ser alvo de penalizações, aplicadas segundo as seguintes regras:</p>
+        <p>Zona sem cobertura empresa (Procable » Página 1 » Campo 10 » Razão da anulação: Código específico 46):</p>
+        <p>Clientes com fidelização há menos de 12 meses – penalização referente às ofertas associadas ao contrato de permanência + custos de instalação; Clientes com fidelização há mais de 12 meses – penalização referente apenas aos custos de instalação.</p>
+        <p>Zona com cobertura, mas sem sinal na morada (Procable » Página 1 » Campo 10 » Razão da anulação: Código específico 06):</p>
+        <p>Penalização referente apenas aos custos de instalação.</p>
+        <p>Nota: Clientes fidelizados onde há sinal na localidade, mas não na nova morada, deverá ser agendada uma deslocação ao local para se verificar a viabilidade. Só após esta deslocação é que será analisada a possibilidade de penalizar o cliente pelo custo de instalação ou de acordo com os patamares de fidelização. Esta informação deverá estar disponível apenas para a área que analisa a atribuição das penalizações, todas as outras áreas (nomeadamente Call Center) deverão dizer ao cliente que peça corte por motivo de MR que será sempre penalizado.</p>
+        <p>Zonas com cobertura e sinal na morada, mas cliente decide não instalar (Código específico 10 em Procable):</p>
+        <p>Penalização referente às ofertas associadas ao contrato permanência + custos de instalação.</p>
+        <p>As penalizações são calculadas pela regra em vigor. Se no pedido da mudança de residência o cliente ainda não tiver os documentos que comprovem a sua situação, deverá ser penalizado. O cliente deverá remeter estes documentos no prazo máximo de 3 meses para que seja efetuado o crédito (se se verificar a veracidade dos mesmos).</p>
+        <p>O cliente deve ser sempre informado das penalizações a aplicar tendo em conta a circunstância da nova morada. No caso de MR sem sinal, indicar a indisponibilidade de fazer a mudança e seguir o procedimento de corte.</p>
+    </div>
+    <div class="item">
+        <p class="title">PENALIZAÇÃO POR NÃO ENTREGA DE EQUIPAMENTOS CEDIDOS PELA empresa</p>
+        <p>Quando há rescisão de contrato/corte em qualquer circunstância, o cliente deverá devolver os equipamentos cedidos pela empresa. Se não o fizer serão cobrados, conforme tarifário em vigor. Esta cobrança também tem lugar em caso de dano ou extravio.</p>
+        <p>Caso se tratem de equipamentos descontinuados não existe penalização associada. O cliente deve ser informado que não serão faturados e, caso haja faturação indevida, deve ser inserido o crédito correspondente.</p>
+        <p>Equipamentos em questão e respetivos valores de penalização: PESQUISAR Fidelização e Penalizações, ÚLTIMO ÍTEM.</p>
+    </div>
+    <div class="item">
+        <p class="title">Acordos de Pagamento</p>
+        <p>Este processo permite: O pagamento de valores em dívida em prestações; Terminar a suspensão e evitar o corte, mediante aprovação/análise da área de Cobranças.</p>
+        <p>Os pagamentos da prestação de Acordos de Pagamento devem ser feitos com uma entidade MB específica e exclusiva para este processo: Entidade: 21972, Referência: referência genérica (00 + número de cliente, sem o último dígito), Valor: valor da prestação.</p>
+    </div>
+    <div class="item">
+        <p class="title">REGRAS DE ELEGIBILIDADE</p>
+        <p>Antes da inserção de um Acordo de Pagamento: Verificar se existe algum acordo em vigor. Se existir, não deverá ser inserido um novo. A validação da existência de acordos é feita via CTK.</p>
+        <p>Quando há um Acordo de Pagamento a decorrer, não é possível alterá-lo, nem efetuar outro. Se o cliente não aceitar a informação deve ser inserido ticket via Nexus para análise.</p>
+        <p>Analisar a elegibilidade do cliente:</p>
+        <p>NÃO ELEGÍVEL:</p>
+        <p>Cliente com acordo de pagamento incumprido nos últimos 3 meses; Se o cliente tiver o serviço suspenso por falta de pagamento, apenas é possível reativar mediante pagamento do valor total em dívida. pESQUISAR Dados e Métodos de Pagamento. Nunca indicar a data a partir da qual o cliente pode pedir novo acordo.</p>
+        <p> ELEGÍVEL COM CONDIÇÕES FIXAS:</p>
+        <p>Clientes DST ou Serviço Móvel Isolado: Possibilidade de pagar o valor em dívida em até 3 prestações (pré-acordo nas 48h seguintes ao pedido e as duas prestações restantes juntamente com o valor das duas faturas seguintes)</p>
+        <p>Novos Clientes (com serviço há menos de 6 meses) e clientes suspensos por falta de pagamento (com ordem SC): Possibilidade de pagar o valor em dívida em 2 prestações (pré-acordo nas 48h seguintes ao pedido e o valor restante com a fatura seguinte)</p>
+        <p>Se o cliente não aceitar as condições para acordo deve ser informado que não existe alternativa e não deverá ser encaminhado pedido de análise.</p>
+        <p>O pedido de acordo deve ser inserido em CTK (considerando pré-acordo + 1 prestação ou pré-acordo + 2 prestações, conforme aplicável) e colocado código de isenção AC.</p>
+        <p>Se o cliente tiver o serviço suspenso pode ser inserida ordem de reativação RQ, caso o cliente já tenha feito o pagamento estipulado ou se comprometa a fazê-lo. Neste caso, deverá ser informado que, apesar de o prazo para o pagamento do pré-acordo ser 48h, se pretender que o serviço não volte a ser suspenso deverá fazer o pagamento dentro das regras da RQ (24h).</p>
+        <p>ELEGÍVEL SEM ANÁLISE (MAIS DO QUE UMA PRESTAÇÃO):</p>
+        <p>Cliente que além de não se incluir nas categorias anteriores cumpram as condições abaixo: Sem acordos incumpridos nos últimos 12 meses; Tenha serviço fixo Fixo ou Convergente não DST; Valor em dívida superior a 75€ e inferior a 750€; A antiguidade da dívida é inferior ou igual a 4 faturas; Já se encontra cortado por falta de pagamento e cumpre os requisitos anteriores, sendo que apenas poderá pedir religação do serviço mediante pagamento total da dívida; Pretenda acordo para o valor total em dívida e não apenas parcial (chamadas telefónicas, consumos móveis e/ou consumos de VoD.</p>
+        <p>ELEGÍVEL COM ANÁLISE PELA EQUIPA C&CC</p>
+        <p>Cliente que seja elegível para acordo sem análise e: Solicite um número de prestações superior ao que o sistema estipula;
+        Tenha valor em dívida inferior a 75€ e superior a 750€; Pretenda acordo para o valor parcial de uma fatura (chamadas telefónicas, consumos móveis e/ou VoD).</p>
+    </div>
+    <div class="item">
+        <p class="title">INSERÇÃO DE ACORDO</p>
+        <p>Após confirmar a elegibilidade do cliente para solicitar um acordo de pagamento, inserir o pedido via CTK seguindo os menus: Criar Novos Tickets » Acordos de Pagamento » Inserir Acordo:</p>
+        <p>Deve ser validada a ação a adotar, de acordo com o estado em que cliente se encontra (consultar o artigo respetivo antes de inserir o pedido de acordo) PESQUISAR: Incobráveis (A6); Pré-Contencioso; Contencioso; Cobrança por Empresa Externa (Intrum Justitia).</p>
+        <p>Após confirmação dos dados nos vários campos, deverá ser selecionada uma das opções de acordo com a situação do cliente:</p>
+        <p>"Inserir Acordo de Pagamento", se não carecer de análise pela equipa de cobranças; "Enviar para Análise pelas Cobranças", se carecer de análise pela equipa de cobranças.</p>
+        <p>Não indicar que o acordo será aceite nos termos solicitados. Não informar valores ou datas de prestações.</p>
+        <p>No tratamento de um acordo de pagamento é necessário colocar comentários completos, com toda a informação passada ao cliente sobre o respetivo acordo. Estes comentários devem ser inseridos no acordo de pagamento, bem como na página 15 do Procable. O comentário deve incluir sempre um número de contacto indicado pelo cliente.</p>
+        <p>Nota: se ao inserir um acordo de pagamento que não careça de análise por parte da equipa de Cobranças a plataforma não assumir as condições devidas, depois de validar que realmente os dados estão correctos deverá ser seleccionada a opção de "Enviar para Análise pelas Cobranças" com comentário detalhado do ocorrido.</p>
+        <p>Se o cliente não se encontrar suspenso por falta de pagamento, colocar um Código de Isenção, de forma a evitar que venha a ficar sem serviços. Quando o acordo é encaminhado para análise, não é necessário colocar código de isenção. No entanto, devem informar o cliente que enquanto o acordo não for aprovado pode correr o risco de suspensão/corte.</p>
+        <p>O não pagamento de uma das prestações mensais acordadas obriga à extinção do contrato, mediante pré-aviso escrito ao cliente, com a antecedência de 8 dias.</p>
+        <p>Informação a prestar ao cliente após a inserção do pedido de acordo de pagamento:</p>
+        <p>Acordo inserido durante o contacto: Valores e datas limite para pagamento, que são geradas pelo CTK: Pré-acordo e prestações seguintes; Data limite para pagamento do pré-acordo - 48h corridas. Caso o pré-acordo não seja liquidado no prazo indicado, o acordo será dado como incumprido; Para além das prestações, o cliente tem de efetuar também os pagamentos das faturas mensais que forem emitidas dentro da data limite das mesmas, caso contrário, o acordo é dado como incumprido.</p>
+        <p>Acordo enviado para análise:</p>
+        <p>Indicar que o pedido vai ser analisado e será contactado o mais brevemente possível (horário expectável de contacto: dias úteis das 9h às 18h); Não informar que o acordo será aceite nos termos solicitados, nem valores ou datas de prestações.</p>
+    </div>
+    <div class="item">
+        <p class="title">Clientes Incobráveis (A6)</p>
+        <p>A um cliente de cobrança difícil é dado o estatuto de Incobrável e é-lhe atribuído o código A6 em Procable, identificável nas páginas 0 ou 13 de Procable.</p>
+        <p>Ao consultar o estado dos pagamentos destes clientes na página 13 de Procable, o valor em dívida surge na coluna dos créditos. É também possível que o valor total da dívida surja fracionado em várias linhas, devido à necessidade de comunicar esta informação à Autoridade Tributária, separando-a por serviços, penalizações e faturas.</p>
+        <p>Um cliente em A6 poderá a qualquer momento regularizar a dívida: Deve-se validar se cliente efetuou algum pagamento após o movimento de algum A6.</p>
+        <p>Pretende liquidar o montante em dívida: Indicar os dados para pagamento. O valor em divida, caso não tenha sido efetuado algum pagamento, poderá ser verificado na última fatura emitida.</p>
+        <p>Pretende fazer um acordo de pagamento do montante em dívida: Validar os procedimentos para acordo de pagamento.</p>
+        <p>Após validação, inserir um ticket em Nexus: Referir o nº de cliente.</p>
+        <p>Caso o A6 não seja retirado e o cliente efetue o pagamento do montante em dívida, o valor pago ficará a crédito até a situação ser detetada e retificada pela Tesouraria.</p>
+    </div>
+    <div class="item">
+        <p class="title">Clientes em Pré-Contencioso e Contencioso</p>
+        <p>Quando não é possível a boa cobrança de valores em dívida, existe o corte dos serviços, bem como a integração desses clientes em processos de recuperação do montante devido. A cobrança da dívida pode ser feita com recurso à entidade externa Intrum Justitia.</p>
+    </div>
+    <div class="item">
+        <p class="title">PRÉ-CONTENCIOSO</p>
+        <p>Considera-se que o cliente está em Pré-contencioso desde a data de corte dos serviços por falta de pagamento até uma potencial ação judicial. No mês a seguir ao corte, o cliente inativo é alvo de ação na entidade externa, ficando esta informação na página 15 de Procable</p>
+        <p>Durante este período, se o cliente contactar a linha de apoio e solicitar um Acordo de Pagamento, o mesmo deve ser inserido se estiverem reunidas as condições.</p>
+        <p>A religação dos serviços apenas é possível após o pagamento do valor total em dívida.</p>
+    </div>
+    <div class="item">
+        <p class="title">CONTENCIOSO</p>
+        <p>Os clientes que se encontram em Contencioso já estão a ser alvo de ações por parte de entidades judiciais e estão identificados na página 0 de Procable com a seguinte descrição: Lista negra: 02 Contencioso:</p>
+        <p>Se um cliente em Contencioso entrar em contacto, não devem ser fornecidas quaisquer informações sobre faturação. Encaminhar um ticket via Nexus para que o cliente seja contactado.</p>
+        <p>Se o cliente necessitar de encaminhar documentação ou insistir numa forma de contacto, informar o e-mail da área de Gestão de Clientes Inativos - Ação Contencioso: clientes.contencioso@empresa.pt. </p>
+    </div>
+    <div class="item">
+        <p class="title">Cobrança por Empresa Externa (Intrum Justitia)</p>
+        <p>Quando um cliente é cortado e existem valores em dívida, o seu processo de cobrança passa a ser gerido pela empresa de cobranças Intrum Justitia no caso da regularização dos valores em dívida não acontecer até ao mês seguinte ao corte.</p>
+    </div>
+    <div class="item">
+        <p class="title">PROCESSO DE COBRANÇA PELA INTRUM JUSTITIA</p>
+        <p>Os clientes que se encontram em ação de cobrança por parte da Intrum Justitia estão identificados na página 15 de Procable: </p>
+        <p>Sem equipamentos por recolher: «C&CC- P.Contencioso: Cliente em ação de cobrança na Entidade Externa INTRUM. Para qualquer contacto relacionado com este assunto, disponibilizar ao Cliente o telefone nº 707500149, disponível nos dias úteis entre as 09H e as 22H.»</p>
+        <p>Com equipamentos por recolher: «C&CC- P.Contencioso: Cliente em acção de cobrança e RECOLHA EQUIPAMENTO, na Entidade Externa INTRUM. Para qualquer contacto relacionado com este assunto, disponibilizar ao Cliente o telefone nº 707500149, disponível nos dias úteis entre as 09H e as 22H.»</p>
+        <p>Caso o cliente pretenda fazer um acordo de pagamento, o pedido deve ser encaminhado via CTK;</p>
+        <p>Se o cliente já não tem valores por regularizar, mas ainda não tem comentário de ação encerrada na Intrum e continua a receber notificações, fazer um ticket em Nexus;</p>
+        <p>Caso o cliente tenha valores por regularizar e registo na página 15 de Procable de estar em ação com a Intrum, mas após contacto com esta entidade a mesma indica que não tem conhecimento da dívida, esclarecer o cliente do valor em dívida e indicar os dados para pagamento. Para qualquer situação em que não se consiga esclarecer o cliente, efetuar um ticket em Nexus.</p>
+        <p>Os clientes deverão ser esclarecidos das questões possíveis. Apenas caso sejam temas relativos à ação da própria Intrum Justitia, deverão ser informados que terão de contactar a entidade.</p>
+        <p>Se o cliente indicar que contactou a Intrum Justitia e foi informado que o acordo de pagamento deve ser formalizado com a empresa, o assistente deve proceder conforme indicado acima.</p>
+        <p>Intrum Justitia: Contacto: 707 500 149. Horário de Funcionamento: 09:00h às 22:00h de segunda a sexta-feira.</p>
+    </div>
+    <div class="item">
+        <p class="title">IVR DE CONTACTO - CAMPANHA DE CLIENTES EM AÇÃO DE CORTE</p>
+        <p>A Intrum Justitia também garante contactos proativos a clientes em ação de corte, ou seja, ainda têm o serviço ativo, mas estão em risco de corte por falta de pagamento. Esses contactos da Intrum Justitia aos clientes são feitos em nome da empresa. A listagem dos clientes a contactar é disponibilizada no início do mês, por norma até dia 10.</p>
+        <p>Estes clientes estão identificados na página 15 de Procable com a mensagem: SACCOLL CLIENTE EM CAMPANHA DE COBRANÇAS IVR.</p>
+        <p>De forma a poder ajudar o cliente, seguem as opções disponíveis quando é contactado pelo IVR da Intrum Justitia:</p>
+        <p>Sobre a utilização do IVR, desde o inicio da gestão até a data provável de vencimento das faturas (dia 21 ou 22) é utilizado a seguinte mensagem:"Esta é uma mensagem da empresa para [Nome Cliente]. Se é o destinatário pressione qualquer tecla para continuar, caso contrário por favor desligue."</p>
+        <p>Se é pressionada uma tecla: "Vimos por este meio informar que se encontra em atraso o montante de [xxx] relativo à sua fatura da empresa com o número [xxxx]. Agradecemos a sua regularização imediata. Selecione uma das seguintes opções: Para efetuar o pagamentos nos próximos 3 dias e receber os dados para pagamento. Prima a tecla 1. Se realizou um pagamento nos últimos 5 dias. Prima tecla 2. Se necessita ajuda de um operador telefónico. Prima 9"</p>
+        <p>Se é carregada a tecla 1 e é telemóvel: "Em breve irá receber por SMS os dados necessários para efetuar o pagamento. Obrigada" Se é carregada a tecla 1 e é número fixo: "Por favor tome nota dos dados necessários para efetuar o pagamento no valor de [xxxx]. Por multibanco na entidade [xx] e referência [xx]"</p>
+        <p>Após o dia 21/22 de cada mês são utilizados 2 IVRs:</p>
+        <p>Apenas para os casos com 2 ou mais faturas vencidas e que não tiveram qualquer pagamento ou reclamação:</p>
+        <p>"Esta é uma mensagem urgente da empresa para [Nome Cliente]. Se é o destinatário pressione qualquer tecla para continuar, caso contrário por favor desligue."</p>
+        <p>Se é pressionada uma tecla: "Evite a Suspensão/Corte do seu serviço empresa com o contrato nº [xxxx] regularizando de imediato o valor em dívida de [xxx] relativo ao seu contrato com o número [xxxx]. Selecione uma das seguintes opções: Para efetuar o pagamento e evitar a Suspensão/Corte do serviço. Prima a tecla 1. Se realizou um pagamento nos últimos 3 dias. Prima a tecla 2. Se necessita ajuda de um operador telefónico contacte-nos para o número 219 010 620"</p>
+        <p>Se é carregada a tecla 1 e é telemóvel: "Em breve irá receber por SMS os dados necessários para efetuar o pagamento. Obrigada". Se é carregada a tecla 1 e é número fixo: "Por favor tome nota dos dados necessários para efetuar o pagamento no valor de [xxxx]. Por multibanco na entidade [xx] e referência [xx]. Prima a tecla 1 para repetir esta mensagem. Obrigada". Se é carregada a tecla 2: "A sua informação foi registada com sucesso. Obrigada"</p>
+        <p>Para os casos com pagamento parciais e sem promessa de pagamento futura:</p>
+        <p>"Esta é uma mensagem da empresa para [Nome Cliente]. Se é o destinatário pressione qualquer tecla para continuar, caso contrário por favor desligue." Se é carregada uma tecla: "Agradecemos o pagamento realizado há dias, no entanto, verificamos que ainda continua em dívida o valor de [xxx] referente a faturas vencidas. Evite a Suspensão/Corte dos serviços efetuando o pagamento de imediato. Para efetuar o pagamento nos próximos 5 dias e receber os dados de pagamento. Prima a tecla 1. Se pretender falar com um operador. Prima a tecla 3."</p>
+        <p>Nota: Mesmo que só exista um registo em Procable, o cliente pode ser alvo de dois contactos.</p>
+    </div>
+    <div class="item">
+        <p class="title">Reembolsos</p>
+        <p></p>
+    </div>
+</div>
 
-    <div id="sidebar"></div>
+<div id="sidebar"></div>
 
-    <script>
-        var items = document.getElementsByClassName('item');
-        var sidebar = document.getElementById('sidebar');
+<script>
+    var items = document.getElementsByClassName('item');
+    var content = document.getElementById('content');
+    var sidebar = document.getElementById('sidebar');
 
-        function searchAndHighlight() {
-            var searchInput = document.getElementById('searchInput').value.toLowerCase();
+    function searchAndHighlight() {
+        var searchInput = document.getElementById('searchInput').value.toLowerCase();
 
-            if (searchInput === '') {
-                resetPage();
-                return;
-            }
-
-            var matches = [];
-            for (var i = 0; i < items.length; i++) {
-                var title = items[i].getElementsByClassName('title')[0].innerText.toLowerCase();
-                var paragraphs = items[i].getElementsByTagName('p');
-
-                var hasMatch = false;
-
-                for (var j = 0; j < paragraphs.length; j++) {
-                    var paragraphText = paragraphs[j].innerText.toLowerCase();
-
-                    if (paragraphText.includes(searchInput)) {
-                        hasMatch = true;
-                        break;
-                    }
-                }
-
-                if (title.includes(searchInput) || hasMatch) {
-                    matches.push(i);
-                }
-
-                if (title.includes(searchInput)) {
-                    items[i].getElementsByClassName('title')[0].innerHTML =
-                        title.replace(new RegExp(searchInput, 'ig'), '<span class="highlight">$&</span>');
-                }
-
-                for (var j = 0; j < paragraphs.length; j++) {
-                    var paragraphText = paragraphs[j].innerText.toLowerCase();
-
-                    paragraphs[j].innerHTML =
-                        paragraphText.replace(new RegExp(searchInput, 'ig'), '<span class="highlight">$&</span>');
-                }
-
-                if (!(title.includes(searchInput) || hasMatch)) {
-                    items[i].classList.add('hidden');
-                } else {
-                    items[i].classList.remove('hidden');
-                }
-            }
-
-            updateSidebar(matches, searchInput);
+        if (searchInput === '') {
+            resetPage();
+            return;
         }
 
-        function resetPage() {
-            for (var i = 0; i < items.length; i++) {
-                var title = items[i].getElementsByClassName('title')[0];
-                var paragraphs = items[i].getElementsByTagName('p');
+        var matches = [];
+        for (var i = 0; i < items.length; i++) {
+            var title = items[i].getElementsByClassName('title')[0].innerText.toLowerCase();
+            var paragraphs = items[i].getElementsByTagName('p');
 
-                title.innerHTML = title.innerText;
+            var hasMatch = false;
 
-                for (var j = 0; j < paragraphs.length; j++) {
-                    paragraphs[j].innerHTML = paragraphs[j].innerText;
+            for (var j = 0; j < paragraphs.length; j++) {
+                var paragraphText = paragraphs[j].innerText.toLowerCase();
+
+                if (paragraphText.includes(searchInput)) {
+                    hasMatch = true;
+                    break;
                 }
+            }
 
+            if (title.includes(searchInput) || hasMatch) {
+                matches.push(i);
+            }
+
+            if (title.includes(searchInput)) {
+                items[i].getElementsByClassName('title')[0].innerHTML =
+                    title.replace(new RegExp(searchInput, 'ig'), '<span class="highlight">$&</span>');
+            }
+
+            for (var j = 0; j < paragraphs.length; j++) {
+                var paragraphText = paragraphs[j].innerText.toLowerCase();
+
+                paragraphs[j].innerHTML =
+                    paragraphText.replace(new RegExp(searchInput, 'ig'), '<span class="highlight">$&</span>');
+            }
+
+            if (!(title.includes(searchInput) || hasMatch)) {
+                items[i].classList.add('hidden');
+            } else {
                 items[i].classList.remove('hidden');
             }
-
-            sidebar.style.display = 'none';
-            sidebar.innerHTML = '';
         }
 
-        function updateSidebar(matches, searchInput) {
-            sidebar.style.display = 'flex';
-            sidebar.innerHTML = '';
+        updateSidebar(matches, searchInput);
+    }
 
-            if (matches.length > 0) {
-                for (var i = 0; i < matches.length; i++) {
-                    var index = matches[i] + 1;
+    function resetPage() {
+        for (var i = 0; i < items.length; i++) {
+            var title = items[i].getElementsByClassName('title')[0];
+            var paragraphs = items[i].getElementsByTagName('p');
 
-                    var link = document.createElement('a');
-                    link.href = '#';
-                    link.textContent = items[matches[i]].getElementsByClassName('title')[0].innerText +
-                        ' - ' + searchInput;
+            title.innerHTML = title.innerText;
 
-                    link.onclick = function (i) {
-                        return function () {
-                            jumpToResult(matches[i]);
-                        };
-                    }(i);
+            for (var j = 0; j < paragraphs.length; j++) {
+                paragraphs[j].innerHTML = paragraphs[j].innerText;
+            }
 
-                    sidebar.appendChild(link);
-                    sidebar.appendChild(document.createElement('br'));
-                }
+            items[i].classList.remove('hidden');
+        }
+
+        content.style.display = 'none';
+        sidebar.style.display = 'none';
+        sidebar.innerHTML = '';
+    }
+
+    function updateSidebar(matches, searchInput) {
+        sidebar.style.display = 'flex';
+        sidebar.innerHTML = '';
+
+        if (matches.length > 0) {
+            content.style.display = 'block'; /* Exibe o conteúdo ao encontrar resultados */
+            for (var i = 0; i < matches.length; i++) {
+                var index = matches[i] + 1;
+
+                var link = document.createElement('a');
+                link.href = '#';
+                link.textContent = items[matches[i]].getElementsByClassName('title')[0].innerText +
+                    ' - ' + searchInput;
+
+                link.onclick = function (i) {
+                    return function () {
+                        jumpToResult(matches[i]);
+                    };
+                }(i);
+
+                sidebar.appendChild(link);
+                sidebar.appendChild(document.createElement('br'));
+            }
+        } else {
+            content.style.display = 'none'; /* Oculta o conteúdo se não houver resultados */
+        }
+    }
+
+    function jumpToResult(index) {
+        for (var i = 0; i < items.length; i++) {
+            if (i === index) {
+                items[i].classList.remove('hidden');
+            } else {
+                items[i].classList.add('hidden');
             }
         }
 
-        function jumpToResult(index) {
-            for (var i = 0; i < items.length; i++) {
-                if (i === index) {
-                    items[i].classList.remove('hidden');
-                } else {
-                    items[i].classList.add('hidden');
-                }
-            }
-
-            items[index].scrollIntoView();
-        }
-    </script>
+        items[index].scrollIntoView();
+    }
+</script>
 
 </body>
 </html>
