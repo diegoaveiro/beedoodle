@@ -17,9 +17,25 @@
       body {
         display: flex;
         flex-direction: column;
-        max-width: 40vw;
-        margin: auto;
+        /* flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center; */
         font-family: 'Roboto', sans-serif;
+      }
+
+      #content {
+        max-width: 40vw;
+        margin: 2vh 0 0 30vw;
+      }
+
+      input {
+        position: fixed;
+        top: 0;
+        left: 30vw;
+        width: 40vw;
+        height: 5vh;
+        border-radius: 6px;
       }
 
       /* Estilo para destacar a palavra-chave */
@@ -52,10 +68,8 @@
           top: 0;
           left: 0;
           width: 20vw;
-          /* background-color: #f0f0f0; */
-          padding: 10px;
-          border-left: 1px solid #ccc;
           overflow-y: auto;
+          margin: 1vw;
           height: 100%; /* Ocupa toda a altura da janela para adicionar uma barra de rolagem */
       }
 
@@ -65,11 +79,22 @@
         text-align: justify;
       }
 
-      input {
-        position: fixed;
-        top: 0;
-        width: 40vw;
-      }
+      @media (max-width: 768px) {
+        #content {
+            max-width: 60vw;
+            margin: 2vh 0 0 30vw;
+        }
+        
+        input {
+            width: 60vw;
+            border-radius: 6px;
+        }
+
+        #sidebar {
+            width: 25vw;
+            margin: 1vw;
+        }    
+      } 
   </style>
 </head>
 <body>
