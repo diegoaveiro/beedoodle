@@ -50,7 +50,6 @@
         .title {
             font-size: 1.2em;
             font-weight: bold;
-            margin-bottom: 5px;
         }
 
         /* Estilo para a barra lateral */
@@ -66,8 +65,9 @@
             left: 0;
             width: 20vw;
             overflow-y: auto;
-            margin: 1vw;
+            padding: 1vw;
             height: 100%; /* Ocupa toda a altura da janela para adicionar uma barra de rolagem */
+            background-color:whitesmoke;
         }
 
         p {
@@ -101,7 +101,8 @@
 </div>
 
 <div id="content">
-  <div class="item">
+<section id="FATURAÇÃO E COBRANÇAS">    
+<div class="item">
     <p class="title">FATURA - ESTRUTURA E ELEMENTOS</p>
     <p>Está disponível na área de cliente um documento com a explicação dos vários elementos da fatura para consulta.</p>
     <p>Algumas considerações a ter na fatura:</p>
@@ -305,7 +306,7 @@
         <p>Independentemente do canal de venda, o contrato deverá ter sido aceite/assinado. A aceitação do contrato é confirmada pela existência em Procable de uma ordem CW relativa ao contrato em questão. Validar que a informação no documento está correta e, caso o cliente solicite, é possível enviar uma cópia; se não estiver correta pedir as correções/crédito, sempre que aplicável. Se não existir documento de fidelização devidamente assinado/aceite, o cliente tem direito ao crédito das penalizações.</p>
         <p>Até 13/11/2022:</p>
         <p>Adesões via Telefone e Online: Se a iniciativa partiu do Cliente (via adesão on-line, inbound ou contacto reativo) não há obrigatoriedade de o cliente devolver o contrato assinado para que seja válido. Se a iniciativa partiu da empresa (campanhas proativas outbound) é necessário validar a existência de contrato assinado e as suas condições, através de uma ordem CW em Procable. Se não existir documento de fidelização assinado, o cliente tem direito ao crédito das penalizações.</p>
-        <p>NOTA: É exigida a disponibilização do contrato ao cliente até ao prazo máximo de 5 dias a contar da data de adesão, por e-mail ou carta.</p>
+        <p>NOTA: É exigida a disponibilização do contrato ao cliente até ao prazo máximo de 5 dias a contar da data de adesão, por email ou carta.</p>
         <p>Adesões Presenciais: Implica a existência de um contrato assinado. Se não existir documento de fidelização assinado, o cliente tem direito ao crédito das penalizações.</p>
         <p>Ao analisar o contrato, validar se existe alguma indicação excecional que isente o cliente das penalizações, em caso de pedido de corte antes do fim da fidelização.</p>
         <p>Para dar seguimento ao pedido de contestação de penalizações tem de se confirmar que o cliente já tem corte inserido, recebeu carta de penalizações e/ou as mesmas já foram faturadas. Depois, o pedido de contestação deve ser enviado para análise via ticket em Nexus.</p>
@@ -315,7 +316,7 @@
     <div class="item">
         <p class="title">PENALIZAÇÃO EM CORTES NOS PRIMEIROS 14 OU 30 DIAS DE CONTRATO</p>
         <p>O período experimental de 14 ou 30 dias é aplicável a clientes que adiram a novos serviços com fidelização (NET, TV, TEL ou MÓVEL) ou refidelizem os que já têm contratados.</p>
-        <p>O cliente terá de ser notificado desse período de livre-resolução: No momento da assinatura do contrato; No envio do contrato por e-mail e/ou carta; No envio de e-mail para adesão aos produtos stand-alone Pós-Pago e Box IP.</p>
+        <p>O cliente terá de ser notificado desse período de livre-resolução: No momento da assinatura do contrato; No envio do contrato por email e/ou carta; No envio de email para adesão aos produtos stand-alone Pós-Pago e Box IP.</p>
         <p>Se o cliente não for notificado sobre o direito de livre resolução no prazo dos 14 dias, esse prazo passa a ser 12 meses. Um cliente que solicitou Port-Out (sem pedido de corte formalizado) e com direito aos 14 dias de livre resolução não deverá ser alvo de penalizações. ​Estas informações não deverão ser fornecidas ao cliente de forma proativa.</p>
         <p>REGRAS: A resolução do contrato sem penalizações no período experimental tem regras para a contabilização, que variam dependendo da forma de adesão. Assim, os prazos aplicáveis são:</p>
         <p>On-line – 14 dias a contar da data em que o cliente devolveu o contrato assinado ou aceitou as condições por escrito;</p>
@@ -414,7 +415,7 @@
         <p class="title">CONTENCIOSO</p>
         <p>Os clientes que se encontram em Contencioso já estão a ser alvo de ações por parte de entidades judiciais e estão identificados na página 0 de Procable com a seguinte descrição: Lista negra: 02 Contencioso:</p>
         <p>Se um cliente em Contencioso entrar em contacto, não devem ser fornecidas quaisquer informações sobre faturação. Encaminhar um ticket via Nexus para que o cliente seja contactado.</p>
-        <p>Se o cliente necessitar de encaminhar documentação ou insistir numa forma de contacto, informar o e-mail da área de Gestão de Clientes Inativos - Ação Contencioso: clientes.contencioso@empresa.pt. </p>
+        <p>Se o cliente necessitar de encaminhar documentação ou insistir numa forma de contacto, informar o email da área de Gestão de Clientes Inativos - Ação Contencioso: clientes.contencioso@empresa.pt. </p>
     </div>
     <div class="item">
         <p class="title">Cobrança por Empresa Externa (Intrum Justitia)</p>
@@ -451,8 +452,461 @@
     </div>
     <div class="item">
         <p class="title">Reembolsos</p>
+        <p>O reembolso pode ser feito a clientes ativos, inativos ou não clientes. No entanto, é necessário confirmar que existe o pagamento do valor indicado na ficha do cliente e que cumpre os requisitos para cada tipo de cliente.</p>
+        <p>CLIENTE ATIVO:</p>
+        <p>Pagamentos em duplicado ou valores elevados pagos incorretamente. É necessário o envio do comprovativo de pagamento, para que seja possível localizar e validar o pagamento.</p>
+        <p>Sugerir sempre que o valor em questão fique a crédito para que sejam descontados os valores de faturas futuras antes de dar seguimento ao pedido de reembolso.</p>
+        <p>CLIENTE INATIVO:</p>
+        <p>Validar se: Não existem equipamentos por devolver: Ver na página 5 em Procable se todas as ordens se encontram fechadas e os equipamentos recolhidos (estado da ordem de "Recolha equipamento - "T"); A ficha do cliente está fechada (todos os equipamentos têm data de corte). A ordem de corte na página 5 está terminada;; </p>
+        <p>Não há valores por regularizar à empresa (outras contas correntes), nem penalizações por aplicar/serviços por faturar: Através do BI e NIF em Procable; Se não existe mais de uma ficha de cliente em Procable. Caso exista, confirmar se é possível alocar o valor à ficha ativa; Em caso de óbito do titular terá de ser anexada a certidão de óbito e habilitação de herdeiros.</p>
+        <p>NÃO CLIENTE:</p>
+        <p>Solicitar sempre: Os dados de pagamento utilizados; Envio do comprovativo de pagamento, para que seja possível localizar e validar o pagamento feito incorretamente.</p>
+        <p>No caso de se tratar de um não cliente, deve ser colocado na criação do ticket o número de cliente 22647471 CLIENTE, DUMMY REEMBOLSO NAO (ficha criada apenas para este propósito).</p>
+        <p>O cliente pode antes optar pela transferência do valor a crédito para outra ficha de cliente nas seguintes situações: Na sequência de pedido de alteração de titular e/ou contratual, mediante apresentação de comprovativo de IBAN; No caso de o cliente ter outra ficha de cliente ativa com o mesmo NIF e BI não é necessário nenhum comprovativo após correta validação de dados. Este pedido deve ser feito via Nexus para a área de BO Tesouraria.</p>
+        <p>O pedido de reembolso é feito via ticket em Nexus e tem de constar obrigatoriamente:</p>
+        <p>Forma de reembolso: transferência bancária/cheque; Caso seja por transferência bancária indicar o IBAN e anexar comprovativo, se não se tratar da conta associada à ficha de cliente; caso se trate da conta associada à ficha, não é necessário o comprovativo, mas tem de ser indicado o IBAN; Montante a reembolsar; Outra informação relevante à aprovação do ticket de reembolso. Se se tratar de não cliente, além do comprovativo de pagamento e IBAN, deve constar o nome da pessoa a quem se destina o reembolso.</p>
+        <p>Formas de reembolso:</p>
+        <p>Transferência bancária: Deverá ser feita para o IBAN associado à conta do cliente caso tenha Débito Direto ativo; Se o IBAN não estiver disponível na ficha de cliente, é necessário que seja enviado o comprovativo do mesmo e que tem de estar em nome do titular empresa; Demora até 15 dias corridos.</p>
+        <p>Cheque: Preferencialmente, para a morada que consta na ficha de cliente. Caso o cliente pretenda receber o cheque numa morada diferente: Confirmar se a morada indicada se destina apenas ao envio do cheque de reembolso. Neste caso, a morada tem que ser dada no pedido e colocada na página 15 de Procable e deve ser solicitado um comprovativo de morada em nome do titular. Caso a correspondência futura seja também para ser enviada para uma nova morada, deverá ser feita a atualização da morada de faturação; Demora até 30 dias corridos.</p>
+        <p>Em caso de óbito, o reembolso só poderá ser efetuado ao Cabeça de Casal (herdeiro que administra a herança), devendo este pedido ser acompanhado pela cópia da Certidão de Óbito e da Escritura de Habilitação de Herdeiros. Esta documentação é necessária tanto para o pedido de reembolso, como para a transferência do valor a crédito para outra ficha de cliente.</p>
+    </div>
+    <div class="item">
+        <p class="title">REEMBOLSO LEWE/BOX IP</p>
+        <p>Quando existam valores a creditar/devolver a clientes com serviço Lewe ou que tenham adquirido a Box IP tem sempre de ser feito reembolso, tendo em conta as características desses produtos.</p>
+        <p>Elegível para reembolso: Valor da compra de cartão (cartão ou 2ª via que nunca funcionou/não recebeu); Valor da compra Box IP (não funciona/não recebeu) - não aplicável em caso de aluguer; Indemnização por atraso de portabilidade.</p>
+        <p>Não é possível efetuar reembolso de carregamentos móveis, pelo que deverão ser convertidos em aditivos. Para tal, deve ser pedida autorização à supervisão.</p>
+        <p>O crédito a um cliente LEWE ou que tenha adquirido Box IP deve ser solicitado via ticket em Nexus e tem de constar obrigatoriamente:</p>
+        <p>Forma de reembolso - transferência bancária ou cheque; Caso seja por transferência bancária indicar o IBAN e anexar comprovativo, no caso de não se tratar da conta associada à ficha de cliente; Montante a reembolsar; Outra informação relevante à aprovação do ticket de reembolso. Se se tratar de não cliente, além do comprovativo de pagamento e IBAN, deve constar o nome da pessoa a quem se destina o reembolso.</p>
+        <p>Não deverá ser inserido pedido de crédito em CTK.</p>
+    </div>
+    <div class="item">
+        <p class="title">Créditos/Débitos</p>
+        <p>A inserção de um crédito/débito visa corrigir incoerências pontuais detetadas ao nível da faturação de um cliente ou responder a pedidos de compensação devida. Antes da inserção de um crédito/débito é necessário validar se o mesmo já foi pedido ou consta em fatura. Para isso deve-se:</p>
+        <p>Simular a fatura do mês seguinte em Procable para confirmar se o valor já foi lançado: Pesquisar pela ficha do cliente; Inserir f + Enter.</p>
+        <p>Verificar se já foi inserido crédito/débito em CTK pelo mesmo motivo; Se o cliente reclama que a oferta não foi aplicada, verificar a existência de ordens em SacWebServer com pedido de inserção de oferta; Se confirmado que a oferta é aplicável, mas o código não está carregado deve ser solicitada a correção da página de serviços do cliente via ordem SU em SacWebServer.</p>
+        <p>Validar a existência de consumos de Internet, Telefone, Móvel e/ou VoD se cliente refere que não conseguiu utilizar os serviços mencionados.</p>
+        <p>Após as validações anteriores e nos casos aplicáveis deverá apresentar-se a campanha de compensação de serviços antes de prosseguir para a inserção do pedido de crédito: Call center - Pesquisar: Matriz de Compensação; Restantes departamentos - Compensação por falha de serviços</p>
+        <p>Não é possível a validação de consumos de NET em clientes da Lousada que tenham serviço FTTH, mas pode-se validar se existiram consumos relativos ao Telefone. Se não existirem consumos de Telefone, deve ser inserido crédito, fazendo referência a ser cliente da Lousada com serviço FTTH.</p>
+        <p>A inserção de créditos/débitos é efetuada em CTK, através da opção Criar Novos Tickets » Credeb » Inserir Crédito / Inserir Débito. Todos os campos necessários devem ser corretamente preenchidos.</p>
+        <p>Créditos de aprovação automática:</p>
+        <p>Os créditos das tipologias abaixo são atribuídos automaticamente, desde que inseridos com valores inferiores ou iguais mencionados. Informar o cliente logo após inserção do pedido que o mesmo será atribuído na próxima fatura.</p>
+        <p>OXF - CORREÇÃO MENSALIDADE TELEFONE 5,00;</p>
+        <p>OXG - CORREÇÃO MENSALIDADE CATV 5,00;</p>
+        <p>OXH - CORREÇÃO MENSALIDADE PAYTV 5,00;</p>
+        <p>OXL - CORREÇÃO MENSALIDADE PACOTE 5,00</p>
+        <p>OXN - CORREÇÃO MENSALIDADE INTERNET 5,00</p>
+        <p>0XO - SERVIÇO EMPRESA (OUTROS) 2,70</p>
+        <p>OXT - CHAMADAS TELEFÓNICAS</p>
+        <p>0XW - SEGUNDA VIA FATURA 3,00</p>
+        <p>07R - CORREÇÃO MENSALIDADE DTV 5,00</p>
+        <p>9XT - COMUNICAÇÕES MÓVEIS 2,00</p>
+        <p>9XF - CORREÇÃO MENSALIDADE MÓVEL</p>
+        <p>MTP - ATRASO DE PAGAMENTO</p>
+        <p>Sempre que se informa o cliente que o crédito vai ser atribuído, deve-se escrever no final nos comentários do crédito “CLIENTE INFORMADO CRÉDITO APROVADO”. Esta informação deve ficar igualmente registada na página 15, por forma a agilizar eventuais análises futuras.</p>
+        <p>Créditos de serviços em pacotes:</p>
+        <p>O cálculo dos serviços em pacotes (em vigor e descontinuados) devem ser efetuados da seguinte forma:</p>
+        <p>2P - Divisão da mensalidade do pacote por 2 serviços (1/2).</p>
+        <p>3P - Divisão da mensalidade do pacote por 3 serviços (1/3).</p>
+        <p>4P - Divisão da mensalidade do pacote por 4 serviços (1/4).</p>
+        <p>3P + Móvel (preço combinado) - Divisão da mensalidade do pacote por 3 serviços (1/3) + Móvel (100%).</p>
+        <p>Crédito de fidelização:</p>
+        <p>Fatura anterior a agosto de 2023: Caso a penalização referente a fidelização seja indevida, deve ser solicitado o crédito com o mesmo montante e tipologia que foi lançado na fatura.</p>
+        <p>Por exemplo, se o cliente tiver o débito de: 5 penalizações referentes a fidelização de serviço (mensalidade); 3 penalizações referentes a fidelização de produto (instalação). Devem ser somados os valores da fatura (entrar dentro da fatura na página 13 de Procable) por tipologia e inserir em CTK esse valor.</p>
+        <p>"PENALIZACAO INCUMP.FID MENSA" - código 0XJ - 96,30+6,70+15,82+15,82+206,26 = 340,90€ - Total a creditar</p>
+        <p>"PENALIZACAO INCUMP.FIDEL-INS" - código 0XY - 10,05+82,71+82,71 = 175,47€ - Total a creditar</p>
+        <p>Fatura de agosto de 2023 e posteriores: Caso a penalização referente a fidelização seja indevida, deve ser solicitado o crédito mediante o tipo de serviço:</p>
+        <p>Código 9XD - Fidelização Serviço Móvel (a utilizar em créditos sobre penalizações com o código de Procable 9XG); Código 0W0 - Fidelização Serviço Fixo (a utilizar em créditos sobre penalizações com o código de Procable PZ4).</p>
+        <p>Deixa de haver distinção entre penalização por incumprimento de fidelização de serviço e fidelização de produto. Quando a penalização é efetuada com os códigos de Procable anteriores (PZ1/PZ2), no pedido de crédito deverão ser utilizados os códigos antigos: 0XY/0XJ. Quando a penalização é efetuada com os novos códigos de Procable (PZ4/9XG), no pedido de crédito deverão ser utilizados os códigos novos: 0W0/9XD.</p>
+        <p>ANTES DE AGO/23:</p>
+        <p>PZ1 - PENALIZAÇÃO INCUMP.FIDEL-INSTALAÇÃO - 0XY - FIDELIZAÇÃO PRODUTO</p>
+        <p>PZ2 - PENALIZAÇÃO INCUMP.FID MENSALIDADES - 0XJ - FIDELIZAÇÃO SERVIÇO</p>
+        <p>APÓS AGO/23</p>
+        <p>PZ4 - PENALIZAÇÃO INCUMP.FID.SERV.MOVEL - 0W0 - FIDELIZAÇÃO SERVIÇO FIXO</p> <!--QC-->
+        <p>PZ4 - PENALIZAÇÃO INCUMP.FID.SERV.FIXO - 9XD - FIDELIZAÇÃO SERVIÇO MOVEL</p> <!--QC-->
+        <p>Créditos com procedimentos específicos:</p>
+        <p>Existem créditos referentes a situações mais particulares que se encontram detalhadas nos separadores abaixo:</p>
+        <p>Seguem algumas regras de simplificação de inserção do crédito em CTK:</p>
+        <p>Os créditos de correção de mensalidade por indisponibilidade de serviços (p.ex. avarias) ou compensação são inseridos com valor 0,01€ para posterior análise;</p>
+        <p>Os créditos decorrentes de erros de inserção de pacotes/serviços e em que seja pedida a correção via SU em Sacwebserver deverão ser inseridos com o valor de 10€ e nos comentários deixada a indicação de que foi solicitada a correção do serviço para que o valor do crédito seja retificado pela área que analisa o pedido assim que esteja correto;</p>
+        <p>Os créditos relativos a usage fixo, móvel ou VOD podem ser inseridos com valor de 0,01€ se não for possível calcular o montante correto devido a pedidos de correção.</p>
+        <p>Informações a prestar ao cliente:</p>
+        <p>Créditos de aprovação automática: informar imediatamente o montante e que o crédito será atribuído na próxima fatura;</p>
+        <p>Restantes créditos: informar que o pedido será analisado e, caso seja aprovado, será refletido na próxima fatura. Nunca indicar o montante do crédito ou se o mesmo será aprovado.</p>
+    </div>
+    <div class="item">
+        <p class="title">LENTIDÃO DE INTERNET</p>
+        <p>Deve-se confirmar se existe um ticket de impacto em Nexus associado ao cliente com a indicação de DS Saturada (IP Edge):</p>
+        <p>Existe - deve ser atribuído o crédito de 50% sobre o valor correspondente a uma mensalidade do serviço de internet (inserir em CTK);</p>
+        <p>Não existe - transferir a chamada para o atendimento técnico especializado ou solicitar contacto para serem efetuados todos os despistes e a validação de velocidade lenta devido a DS Saturada (IP Edge).</p>
+        <p>Se a reclamação do cliente for reincidente e estiver confirmado que foram efetuados todos os despistes técnicos possíveis:</p>
+        <p>Encaminhar ticket Nexus para análise; Caso se confirme que a responsabilidade é da empresa, deve-se atribuir 50% do valor da mensalidade de internet correspondente aos dias entre a reclamação e a resolução da situação.</p>
+        <p>Este crédito só deve ser atribuído uma vez. Caso o cliente volte a reclamar de lentidão deve-se começar o processo do início.</p>
+        <p> Os créditos de velocidade de internet só podem ser atribuídos se não existir dívida. Caso existam valores em atraso o crédito só poderá ser atribuído após o seu pagamento.</p>
+    </div>
+    <div class="item">
+        <p class="title">CRÉDITOS AUTOMÁTICOS POR INDISPONIBILIDADE DE SERVIÇO (NOVA LEI DAS COMUNICAÇÕES ELETRÓNICAS)</p>
+        <p>A nova Lei das Comunicações Eletrónicas (LCE) entrou em vigor no dia 14 de novembro de 2022. Uma das alterações introduzidas consiste no crédito automático dos clientes por indisponibilidades de serviço, como a seguir se descreve:</p>
+        <p>Sempre que os serviços contratados se mantiverem indisponíveis por um período superior a 24 horas, consecutivas ou acumuladas por período de faturação, e que o motivo não seja da responsabilidade do utilizador, este tem direito ao crédito do valor equivalente ao preço que teria de pagar pela prestação do serviço durante esse período. </p>
+        <p>Este valor deve ser pago pelo operador através de crédito na fatura seguinte:</p>
+        <p>A empresa desenvolveu um sistema de cálculo automático destes créditos. Vão ser calculados com base nos tickets de anomalias coletivas e nas ordens de assistência 55 (indisponibilidade do serviço) e 11 (garantia).</p>
+        <p>O valor a creditar é proporcional ao tempo em que cada serviço esteve afetado no período de faturação, que na empresa é o mês civil.</p>
+        <p>Para cada cliente e cada serviço por ele contratado que seja afetado, vão-se somando os tempos de indisponibilidade ao longo do mês, havendo direito a crédito quando o total acumulado em cada caso ultrapassar 24 horas.</p>
+        <p>A contagem de tempos, para efeito de crédito, decorre entre as 00:00 horas do primeiro dia do mês e as 23:59 do último dia do mês. No caso de um incidente que se inicie num mês e termine no mês seguinte, contabiliza-se em cada um dos meses a fração respetiva da duração do incidente.</p>
+        <p>No caso de pacotes, considera-se que a mensalidade é dividida igualmente pelo número de serviços do pacote.</p>
+        <p>Assim, num exemplo de um pacote 3P com 30 € de mensalidade, cada serviço vale 10 € por mês. Caso apenas um serviço seja afetado, devemos creditar: nº horas de indisponibilidade/total de horas do mês x 10€.</p>
+        <p>São tidas em conta avarias comuns, que afetam vários clientes simultaneamente, e avarias individuais, independentemente de serem detetadas pela empresa ou comunicadas pelo cliente.</p>
+        <p>O cálculo dos valores a creditar por cliente é feito automaticamente e incluído na fatura emitida no mês seguinte àquele em que ocorreu a indisponibilidade.</p>
+        <p>Avarias individuais reportadas pelo cliente que coincidam com avarias comuns só são contabilizadas uma vez, para evitar duplicações de crédito. Por essa razão, caso um cliente solicite um crédito, deve ser informado que o mesmo é calculado automaticamente e incluído na fatura do mês seguinte à ocorrência.</p>
+        <p>O cliente deve ser creditado pelos custos que tenha a participar uma indisponibilidade, desde que não seja da responsabilidade do mesmo. Isto significa que devemos creditar o custo da chamada em que o cliente incorra para nos informar de uma avaria.</p>
+        <p>Estas obrigações abrangem todos os clientes.</p>
+        <p>Os primeiros créditos, caso existam, serão incluídos nas faturas a emitir em dezembro e dirão respeito a indisponibilidades de serviços ocorridas no período de 14 a 30 de novembro.</p>
+    </div>
+    <div class="item">
+        <p class="title">PERDA DE DESCONTOS ASSOCIADOS A DD / FE</p>
+        <p>Os clientes podem ter descontos adicionais na sua faturação mediante a adesão a Débito Direto e Fatura Eletrónica, dependendo da campanha comercial a que aderiram (seja novos ou atuais clientes).</p>
+        <p>Se o cliente reclamar que perdeu o desconto associado à adesão ao Débito Direto (DD) ou Fatura Eletrónica (FE), deve-se validar há quanto tempo deixou de o ter:</p>
+        <p>Menos de 3 meses: Se voltar a ativar o DD e/ou FE, o desconto é automaticamente atribuído com efeitos retroativos, desde a data em que foi cortado; Esta atribuição automática do crédito é feita por batch no dia 1 do mês seguinte à ativação, por isso não se verifica simulando a fatura do mês seguinte; Exemplo: cliente que perdeu os descontos na fatura de fevereiro, terá o crédito automático se o DD e/ou FE estiverem ativos em sistema até 30 de abril.</p>
+        <p>3 meses ou mais: Deve ser inserida uma ordem SU em Sacwebserver para correção de fatura, com atribuição do crédito com efeitos retroativos, desde a data em que foi cortado.</p>
+        <p>É obrigatório informar o cliente que tem de ativar o Débito Direto e/ou a Fatura Eletrónica para continuar a usufruir do desconto no futuro.</p>
+    </div>
+    <div class="item">
+        <p class="title">CRÉDITO DE CHAMADA PARA A LINHA DE APOIO</p>
+        <p>As chamadas para a Linha de Apoio podem ter um custo associado, caso o cliente contacte o nº 16800. Será possível creditar as mesmas, seja durante a chamada ou posteriormente. As chamadas efetuadas para o nº 16800 a partir de um nº com tarifário Lewe não têm custo.</p>
+        <p>O cliente deve ser creditado do valor de chamadas que efetue para participar uma avaria/indisponibilidade, desde que não seja da responsabilidade do mesmo.</p>
+        <p>Cliente solicita crédito durante a chamada:</p>
+        <p>Contacto de um número empresa:</p>
+        <p>Tipificação elegível para crédito proativo - é automaticamente assinalado no script na GO. Informar cliente que a chamada não vai ter custos.</p>
+        <p>Tipificação elegível para crédito reativo - assinalar no script de chamada na GO apenas mediante reclamação do cliente.</p>
+        <p>Tipificação não elegível para crédito - inserir crédito do custo da chamada em CTK mediante reclamação do cliente e apenas se não tiver sido inserido um semelhante nos últimos 3 meses.</p>
+        <p>Contacto de um número de outra rede:</p>
+        <p>Tipificação elegível para crédito (proativo ou reativo) - inserir crédito do custo da chamada em CTK, apenas mediante reclamação do cliente; </p>
+        <p>Tipificação não elegível para crédito - inserir crédito do custo da chamada em CTK, mediante reclamação do cliente e apenas se não tiver sido inserido um semelhante nos últimos 3 meses.</p>
+        <p>No caso de o cliente estar a ligar de um número empresa o valor do crédito a considerar em CTK é de 0,95€. Se estiver a ligar de outra rede, deve-se inserir crédito no valor de 2,70€ (custo máximo da chamada).</p>
+        <p>Estes créditos são de aprovação automática.</p>
+        <p>Cliente solicita crédito posteriormente à chamada:</p>
+        <p>Validar a cobrança da chamada através de simulação de fatura (se se referir ao mês em curso) ou consulta da fatura já emitida. Se se confirmar, inserir o crédito correspondente via CTK considerando o valor com IVA.</p>
+        <p>O cliente deve ser sempre informado que a chamada vai ser creditada.</p>
+    </div>
+    <div class="item">
+        <p class="title">CRÉDITO LEWE / BOX IP</p>
+        <p>Para clientes Lewe (agrupamento M1 ou M2) e devolução do valor de compra da Box IP (agrupamento RI), não são inseridos créditos pois a devolução do valor é feita por reembolso. Existe a possibilidade de o cliente solicitar créditos relativos a outras questões da Box IP.</p>
+        <p>Crédito do custo do envio da Box IP para o Centro Reparador:</p>
+        <p>quando o cliente remete à sua responsabilidade o equipamento para o Centro Reparador e é reexpedido um equipamento novo:</p>
+        <p>A reexpedição e consequente emissão de crédito dos custos do envio do equipamento, que o cliente suportou ao enviar-nos a Box, só são efetuados após confirmação de receção do equipamento e respetivo relatório do Centro Reparador a indicar que a avaria da Box é da responsabilidade da empresa e não do cliente.   </p>
+        <p>O crédito é apenas atribuído se o cliente solicitar, sendo que tem de enviar o respetivo comprovativo dos CTT com o valor da despesa e em nome do titular do contrato.</p>
+        <p>Créditos por falta de serviço Box IP: Aplica-se o processo em vigor para falha de serviços.</p>
+    </div>
+    <div class="item">
+        <p class="title">CAMPANHA AMIGO empresa NÃO ATRIBUÍDA</p>
+        <p>Verificar procedimento de - campanha Amigo empresa.</p>
+    </div>
+    <div class="item">
+        <p class="title">SERVIÇOS DE VALOR ACRESCENTADO (SVA)</p>
+        <p>No caso de o cliente contactar a indicar que não aceita os valores faturados, pois não subscreveu o serviço, o procedimento a seguir é:</p>
+        <p>1. Creditar de imediato; 2. Impossibilitar o uso futuro deste serviço, bloqueando o envio de SMS SVA (68 e 61).</p>
+        <p>O cliente só será desbloqueado novamente após a empresa receber o pedido de autorização de faturação.</p>
+        <p>Se o cliente alegar que não fez o envio do SMS, seguimos as regras em vigor (pode ou não ser creditado), mas deve ser efetuado o bloqueio e informar o cliente que se quiser utilizar o serviço no futuro terá que enviar o pedido de desbloqueio do número e autorização da faturação.</p>
+    </div>
+    <div class="item">
+        <p class="title">CRÉDITO DE FATURAÇÃO SMS INTERNACIONAL IMESSAGE - 1ª RECLAMAÇÃO</p>
+        <p>Existem situações pontuais de clientes com equipamentos Apple que são faturados pelo envio de SMS Internacionais para o número 00447786205094.</p>
+        <p>Este custo está relacionado com a APP iMessage da Apple (IOS) que envia um SMS sempre que o utilizador a ativa. pesquisar iMessage (Créditos/Débitos)</p>
+        <p>O cliente deverá ser esclarecido que o iMessage é um serviço prestado pela Apple e sempre que o ativa é enviado um SMS Internacional para o Reino Unido, que na empresa tem um custo de 0,28€.</p>
+        <p>Caso se trate de uma primeira reclamação, e com o objetivo de minimizar a insatisfação do cliente, pode-se atribuir o crédito do valor cobrado. A partir daqui considera-se que o cliente está informado que sempre que ativar o iMessage incorre neste custo.</p>
+        <p>Estes pedidos de crédito devem ser inseridos via CTK com código 9XT para análise do Billing.</p>
+    </div>
+    <div class="item">
+        <p class="title">Matriz de compensações</p>
+        <p>Em algumas situações de reclamação do cliente, o assistente pode atribuir uma compensação para gestão da insatisfação do cliente. Após verificação da tipologia de reclamação, atribui-se a compensação conforme a matriz de compensações.</p>
+        <p>Nota: a matriz não pode ser usada para atribuir compensações previstas em procedimento, como créditos referentes a indisponibilidade de serviços por motivos técnicos ou situações de IP Edge.</p>
+        <p>REGRAS:</p>
+        <p>Apenas podem ser atribuídas de forma reativa e quando o cliente demonstra uma clara insatisfação que se enquadre na matriz, exceto para falhas de serviço que ainda estão a ocorrer, em que se pode atribuir a compensação de forma proativa.</p>
+        <p>Adequar as ofertas atribuídas ao cliente à situação.</p>
+        <p>Analisar o histórico de ofertas atribuídas anteriormente - não atribuir múltiplas compensações a um cliente pelo mesmo motivo.</p>
+        <p>As ofertas de 50% e 100% da mensalidade do serviço fixo, apenas podem ser atribuídas nas seguintes situações:</p>
+        <p>50% – apenas em falhas totais do(s) serviço(s) superiores a 2 dias consecutivos e comprovadas por assistência técnica ou ticket;</p>
+        <p>100% – apenas em falhas totais do(s) serviço(s) superiores a 4 dias consecutivos e comprovadas por assistência técnica ou ticket.</p>
+        <p>O cliente deve ser sempre informado da atribuição da compensação antes da inserção do pedido (e confirmado que concorda com a mesma) e respetivo timing:</p>
+        <p>Ofertas inseridas até às 17h serão atribuídas num prazo máximo de 24h úteis; As restantes podem demorar até 2 dias úteis, depois de inserido o pedido.</p>
         <p></p>
     </div>
+    <div class="item">
+        <p class="title">TIPOLOGIA DE RECLAMAÇÃO</p>
+        <p>TIPOLOGIA - CAUSA empresa</p>
+        <p>ÂMBITO - FALHA DE SERVIÇOS_CONTINGÊNCIA</p>
+        <p>exemplos:</p>
+        <p>FALHA DE SERVIÇOS (TOTAL OU APENAS ALGUNS SERVIÇOS)</p>
+        <p>Atraso na execução de assistências técnicas - sem disponibilidade de quotas até DU seguinte (inclusive) e/ou com Rede pendente há mais de 48h.</p>
+        <p>Avaria massiva, com prazo resolução igual ou superior a 24h.</p>
+        <p>ATRASOS PROVISÃO: Atraso ou falha de provisão, com ticket aberto há mais de 24h</p>
+        <p>EXCEPCIONAL: Urgência ou compromisso inadiável alegado pelo Cliente (apenas com autorização da Supervisão).</p>
+        <p>acções:</p>
+        <p>1 Pedir desculpa pelo sucedido.</p>
+        <p>2 Aplicar medida de contigência, para reposição parcial do(s) serviço(s) afectado(s), se aplicável. PROACTIVO</p>
+        <p>NET - atribuir aditivo de 2GB a um dos móveis contratados; explicar como pode utilizar o dispositivo móvel como HotSpot e partilhar com outros dispositivos.</p>
+        <p>TV - se já tem a APP activa, explicar como pode usar noutros dispositivos; se não tem a APP activa, atribuir oferta durante 1 mês e explicar como pode activar o login na AC. Estas medidas apenas devem ser aplicadas se tem o serviço de NET a funcionar.</p>
+        <p>TEL - solicitar o reencaminhamento de chamadas através de ticket para Suporte N2 com informação do número fixo em que pretende activar a funcionalidade e o número de destino.</p>
+        <p>TIPOLOGIA - CAUSA empresa</p>
+        <p>ÂMBITO - FALHA DE SERVIÇOS_RESOLVIDA</p>
+        <p>exemplos:</p>
+        <p> SERVIÇOS_RESOLVIDA	FALHA DE SERVIÇOS (TOTAL OU APENAS ALGUNS SERVIÇOS):</p>
+        <p>Ticket de anomalia, com indisponibilidade de serviços superior a 4h. Falha individual de Cliente, com indisponibilidade de serviços superior a 24h.</p>
+        <p>ATRASOS PROVISÃO: Ativação/alteração fora de timing (mais de 24h). Atraso na portabilidade.</p>
+        <p>acções:</p>
+        <p>1 Pedir desculpa pelo sucedido. 2 Aplicar medida de compensação. REACTIVO</p>
+        <p>TIPOLOGIA - CAUSA empresa</p>
+        <p>âmbito - ERRO</p>
+        <p>exemplos:</p>
+        <p>ERRO FACTURAÇÃO: Erro na fatura (exemplo: oferta não aplicada). Suspensão indevida.</p>
+        <p>ERRO PEDIDO: Alteração não de acordo com o solicitado. Erro na análise/tratamento da documentação.</p>
+        <p>ERRO INFORMAÇÃO: Dados de pagamento incorrectos.</p>
+        <p>acções:</p>
+        <p>1 Pedir desculpa pelo sucedido. 2 Corrigir a situação de acordo com os processos definidos. 3 Aplicar medida de compensação. REACTIVO</p>
+        <p>TIPOLOGIA - CAUSA empresa</p>
+        <p>âmbito - comportamental</p>
+        <p>exemplos:</p>
+        <p>	FALTA ATENÇÃO AO CLIENTE: Falha de comparência dos técnicos. Ausência de resposta/callback (SLA ultrapassado). Tempo de espera (telefónico ou presencial). Postura do interlocutor.</p>
+        <p>acções:</p>
+        <p> 1 Pedir desculpa pelo sucedido. 2 Agradecer o feedback e informar que a situação será reportada para evitar novas ocorrências. 3 Aplicar medida de compensação excepcional, se não teve nenhuma nos últimos 6 meses. REACTIVO</p>
+        <p>TIPOLOGIA - CAUSA cliente</p>
+        <p>âmbito - MAL ENTENDIDO NA INFORMAÇÃO ou ERRO DO CLIENTE</p>
+        <p>exemplos:</p>
+        <p>PERDA DESCONTOS: Descontos associados a DD/FE. Descontos fim de fidelização.</p>
+        <p>VALORES COBRADOS: Consumos/eventos não reconhecidos (até um máximo de 30€). Deslocação técnica. Reativação / Religação. Atraso de pagamento.</p>
+        <p>ERRO CLIENTE: Pagamento não alocado. Erro na documentação ou documentos em falta.</p>
+        <p>acções:</p>
+        <p>1 Lamentar a situação.</p>
+        <p>2 Clarificar o sucedido e informar alternativas para evitar novas ocorrências (sempre que aplicável).</p>
+        <p>3 Devolver o valor faturado ou aplicar compensação excecional, se não teve nenhuma nos últimos 6 meses. REACTIVO</p>
+        <p>PERDA DESCONTOS - devolver valor faturado desde que assuma o cumprimento das condições a partir desse momento (DD/FE) ou refidelize (fim de fidelização). PROACTIVO</p>
+    </div>
+    <div class="item">
+        <p class="title">Suspensão e Reativação de Serviços</p>
+        <p>A suspensão ocorre pelo incumprimento do pagamento de faturas no prazo estipulado e impossibilita o cliente de utilizar os serviços de Internet, DTV, Telefone (efetuar chamadas), Móvel, Pay-TVs e VoD (caso aplicável).</p>
+        <p>Continua a conseguir receber chamadas. Consegue ligar para o 16800 e o 112.</p>
+        <p>A reativação de serviços pode ser feita mediante pagamento dos valores em dívida ou realização de acordo de pagamento.</p>
+    </div>
+    <div class="item">
+        <p class="title">SUSPENSÃO DE SERVIÇOS</p>
+        <p>INFORMAÇÃO DA SUSPENSÃO DE SERVIÇOS:</p>
+        <p>Na ausência de pagamento, o cliente é notificado de acordo com o calendário de cobranças: Através de SMS; Através de carta, 30 dias antes da data prevista para suspensão dos serviços. Para evitar a suspensão, os clientes devem regularizar a dívida até à data limite indicada na carta.</p>
+        <p>As notificações enviadas ao cliente podem ser consultadas em:</p> 
+        <p>Procable: Página 15:</p>
+        <p>Carta de suspensão: foi emitida carta de aviso de suspensão dos serviços com data limite para pagamento 30 dias</p>
+        <p>SMS de corte: foi enviado o seguinte sms ao cliente: evite o corte do seu serviço.</p>
+        <p>Nexus:</p> 
+        <p>Aceder a Informação de Cliente » Cartas de Cliente » Cartas enviadas ao Cliente. Selecionar o documento da carta de suspensão. Clicar em Ver PDF.</p>
+        <p>SUSPENSÃO DOS SERVIÇOS: A suspensão dos serviços pode ser validada em Procable: Página 5 - Ordem SC</p>
+    </div>
+    <div class="item">
+        <p class="title">REATIVAÇÃO DE SERVIÇOS</p>
+        <p>VALIDAÇÕES:</p>
+        <p>Se em Procable na página 13, o pagamento dos valores em atraso já deu entrada, reativar o serviço: Considera-se que o valor em atraso é o da fatura que originou a suspensão do serviço (indicada na carta de aviso de suspensão).</p>
+        <p>Se o cliente indica que vai efetuar o pagamento nas próximas 24h, efetuar reativação provisória.</p>
+        <p>Se o cliente envia comprovativo de pagamento, reativar o serviço.</p>
+        <p>Se o cliente pretende fazer um acordo de pagamento, a reativação apenas ocorre após entrada do pagamento referente ao pré-acordo.</p>
+        <p>Se em Procable na página 5, existe uma ordem SC e ordem 15 com data futura, seguir o processo de religação.</p>
+        <p>CUSTO DE REATIVAÇÃO: A reativação dos serviços apenas pode ser cobrada uma vez por mês e tem um valor de 5,99€ que será cobrado na fatura do mês seguinte.</p>
+        <p>Não deverão ser cobrados custos de reativação se: O cliente comprova que efetuou o pagamento antes da inserção da ordem de suspensão. Existe um código de isenção em Procable. Nestes casos, criar ticket Nexus.</p>
+        <p>REATIVAÇÃO: Existem dois tipos de reativação:</p>
+        <p>RQ - Reativação provisória, aplicável se:</p>
+        <p>O cliente indica que fez o pagamento nas últimas 24h ou compromete-se a fazê-lo nas próximas 24h; Não existiu outra ordem RQ inserida no mesmo mês; Não existe uma ordem SC após uma ordem RQ no mesmo mês - se ocorreu há menos de 6 meses, solicitar autorização à Supervisão (excluem-se situações de atraso na integração dos pagamentos e/ou reativações provisórias inseridas pela equipa de Posto Operacional).</p>
+        <p>RO – Reativação definitiva, aplicável se:</p>
+        <p>Existe registo do pagamento em sistema; ou Cliente enviou o comprovativo de pagamento válido (passível de validação com recurso a TechSee).</p>
+        <p>Em Procable, seguir a ordem indicada: Página 5: Criar ordem consoante o caso: RQ - Reativação provisória; RO - Reativação definitiva: Status - T: Data prev. - próprio dia: Tecnico - 000: Coment. - INFO CUSTO DE REATIVAÇÃO</p>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="item">
+        <p class="title">INFORMAÇÕES A PRESTAR AO CLIENTE DURANTE O ATENDIMENTO</p>
+        <p>INFORMAÇÕES A PRESTAR AO CLIENTE:</p>
+        <p>Caso o serviço ainda não esteja suspenso: Informar do montante total em dívida, incluindo a fatura do mês corrente; Deve ser indicado apenas o valor das faturas vencidas se perguntar especificamente qual o valor a pagar para evitar a suspensão.</p>
+        <p>Caso o serviço já esteja suspenso: Informar que deve ser pago o valor em atraso, que corresponde ao da fatura que originou a suspensão do serviço (indicada na carta de aviso de suspensão); Caso o cliente envie o comprovativo de pagamento, não necessita de contactar novamente. O serviço é reativado num prazo médio de 4 horas;</p>
+        <p>Promover o pagamento por débito direto.</p>
+        <p>INFORMAÇÕES ADICIONAIS A PRESTAR AO CLIENTE APÓS REATIVAÇÃO:</p>
+        <p>Prazo estimado para reativação - 30 minutos. Caso cliente contacte após os 30 minutos a reclamar que o serviço ainda não está reposto, informar que poderá demorar até 24h (dias úteis). <!-- QC --> Custo (caso aplicável): 5,99€, debitado na próxima fatura. Caso se trate de uma RQ, indicar que os serviços voltam a ser suspensos se não efetuar o pagamento até ao dia seguinte.</p>
+    </div>
+    <div class="item">
+        <p class="title">Corte por falta de pagamento</p>
+        <p>O cliente fica em risco de corte sempre que tenha sido alvo de suspensão de serviços por falta de pagamento há 30 dias e nesse período não tenha efetuado o pagamento do valor em falta ou não tenha realizado um acordo de pagamento. Se o cliente pretender regularizar a dívida, devem ser indicados os dados para pagamento do valor total.</p>
+        <p>Para evitar o corte o cliente deverá pagar o montante total em dívida.</p>
+        <p>O cliente é notificado da possibilidade de corte através de carta de suspensão e SMS, à medida que se aproxima a data.</p>
+        <p>Os SMS de aviso de corte ficam registados na pág. 15 em Procable e a data de envio pode ser consultada no calendário de cobranças.</p>
+    </div>
+    <div class="item">
+        <p class="title">PROCESSO DE CORTE E REVERSÃO DE CORTE</p>
+        <p>PROCESSO DE CORTE: Efetuado em duas fases:</p>
+        <p>Corte remoto: de forma remota e sem deslocação à morada do cliente 30 dias depois da suspensão por falta de pagamento (conforme informação constante na carta de aviso).</p>
+        <p>Corte no terreno: corte físico do serviço, feito na morada do cliente. Ocorre alguns dias após o corte remoto, na data do campo "Terminado" da ordem 15. Corte no terreno - fica sem a totalidade dos serviços</p>
+        <p>EVITAR/REVERTER O CORTE: A única forma de evitar ou reverter o corte é mediante o pagamento do valor total em dívida.</p>
+        <p>Se o cliente regularizar os valores a pagamento: Antes da data da inserção da ordem de corte - o corte não será efetuado.</p>
+        <p>Após a inserção da ordem de corte - seguir o procedimento de religação de serviços. ​Caso o cliente não pretenda a religação dos serviços - tem de devolver os equipamentos</p>
+    </div>
+    <div class="item">
+        <p class="title">Religação de Serviços</p>
+        <p>O cliente pode pedir a religação dos serviços cortados, desde que dentro das seguintes regras:</p>
+        <p>Até 60 dias após a desativação do serviço, seja pelo motivo de falta de pagamento ou pedido pelo cliente (podendo esta estar sujeita aos custos previstos para o efeito);</p>
+        <p>Liquidação total de valores em dívida, exceto valores de penalizações.</p>
+        <p>O custo de religação de serviços será refletido na próxima fatura: Serviço fixo/convergente - 50€ (com IVA); Serviço Móvel ou Box IP - 20€ (com IVA);</p>
+        <p>No caso de uma religação de serviços cortados por falta de pagamento, deve ser sempre indicado ao cliente para liquidar a totalidade dos valores em aberto; no entanto, se existir uma fatura dentro do prazo limite para pagamento e o cliente solicitar, pode-se dar seguimento ao pedido de religação sem que seja necessário liquidar o valor dessa fatura.</p>
+    </div>
+    <div class="item">
+        <p class="title">RELIGAÇÃO APÓS CORTE A PEDIDO PELO CLIENTE - SERVIÇO FIXO E CONVERGENTE</p>
+        <p>Se a religação for solicitada dentro de 60 dias após o corte: O cliente poderá dar continuidade aos serviços de que se encontrava a usufruir ou migrar para a nova oferta em vigor; Caso tenha sido faturado com os valores da penalização será efetuada a reversão dos valores correspondentes às penalizações.</p>
+        <p>Religação com custos: Sempre que o Cliente pretende manter as condições e fidelização atual.</p>
+        <p>Religação sem custos: Sempre que o Cliente adira à campanha de fidelização e aumenta o período de fidelização. Neste caso o Cliente perde as ofertas e descontos que estava a usufruir. Neste caso as chamadas devem ser transferidas para linha renegociação. Caso a linha esteja encerrada deverá ser aberto ticket GO para equipa renegociação.</p>
+        <p>Horário de funcionamento da Linha Renegociação: Segunda a Sexta-Feira: das 9h ás 21h. Sábado: das 10h ás 19h.</p>
+        <p>No caso de a religação ser solicitada depois de 60 dias após o corte: Encaminhar para a Linha de Aquisição, pois é considerado novo cliente.</p>
+        <p>Se o Cliente pretende manter o serviço ou incluir apenas Pay TV (sem alteração da fidelização), o Callcenter pode assumir esta tipologia e chamada e inserir ordem 02 - Religação em Sacwebserver. </p>
+        <p>NOTA: Garantir que o cliente está na residência durante o horário previsto para a deslocação do técnico.</p>
+        <p>Se o Cliente pretende aderir campanha de fidelização, a chamada deve ser transferida para equipa de renegociação. Caso a linha esteja encerrada deverá ser aberto ticket GO para equipa renegociação.</p>
+    </div>
+    <div class="item">
+        <p class="title">RELIGAÇÃO POR FALTA DE PAGAMENTO - SERVIÇO FIXO E CONVERGENTE</p>
+        <p>Caso o cliente tenha outro contrato com dívida, encaminhar por ticket via Nexus para ser analisada a possibilidade de religar os serviços.</p>
+        <p>RELIGAÇÃO FICTÍCIA:</p>
+        <p>Quando existe um corte inserido em Procable, mas ainda não foi efetuado no terreno trata-se de uma Religação Fictícia e é necessário inserir ordem 74 em SacWebServer. Caso o Cliente já tenha entregue os terá que ser agendada religação no terreno.</p>
+        <p>RELIGAÇÃO NO TERRENO:</p>
+        <p>Quando já ocorreu o corte de serviços no terreno, é necessário fazer uma Religação no Terreno através da ordem 76 em SacWebServer.</p>
+        <p>Religação com custos: Sempre que o Cliente pretende manter as condições e fidelização atual.</p>
+        <p>Religação sem custos: Sempre que o Cliente adira à campanha de fidelização e aumenta o período de fidelização. Neste caso o Cliente perde as ofertas e descontos que estava a usufruir. Neste caso as chamadas devem ser transferidas para linha renegociação. Caso a linha esteja encerrada deverá ser aberto ticket GO para equipa renegociação.</p>
+    </div>
+    <div class="item">
+        <p class="title">RELIGAÇÃO EM NOVA MORADA</p>
+        <p>No caso de religação noutra morada será cobrado o custo de mudança de residência (250€ com IVA), sendo o processo tratado da mesma forma.</p>
+        <p>A religação pode ser: Com custos: Sempre que o cliente pretende manter as condições e fidelização atual.</p>
+        <p>Sem custos: Sempre que o cliente adira à campanha de fidelização e aumente o período de fidelização. Perde as ofertas e descontos que estava a usufruir. A chamada deve ser transferida para a linha de renegociação. Caso a linha esteja encerrada deverá ser aberto ticket GO para equipa de renegociação.</p>
+    </div>
+    <div class="item">
+        <p class="title">RELIGAÇÃO SERVIÇO MÓVEL ISOLADO PÓS PAGO</p>
+        <p>A religação é possível, quer o cliente tenha originalmente um número nativo ou portado, podendo ser necessário solicitar um novo cartão SIM:</p>
+        <p>Se o cliente tiver entretanto pedido Port Out do número - o cartão não pode ser recuperado e tem que ser entregue um novo cartão, referir nos comentários da ordem de religação o envio CTT; </p>
+        <p>Se não tiver sido pedido Port Out - o cartão pode ser recuperado. </p>
+        <p>A religação do serviço móvel é efetuada através de uma ordem 74 - Religação Fictícia por Falta de Pagamento em Sacwebserver.</p>
+    </div>
+    <div class="item">
+        <p class="title">PEDIDO DE ALTERAÇÃO DE PACOTE/RENEGOCIAR VALORES/ADERIR A SERVIÇOS</p>
+        <p>Sempre que um cliente pretenda renegociar valores, alterar pacote, aderir a serviços ou obter qualquer oferta que implique uma nova fidelização, a chamada deve ser transferida para a Equipa de Renegociação.</p>
+        <p>Exceção: Adesão a Pay TV e serviço móvel, tendo em conta que não implica alteração da fidelização em vigor dos serviços já contratados.</p>
+        <p>Se não for possível transferir a chamada, porque cliente não aceita ou está fora do horário de atendimento destas linhas, deve ser aberto ticket GO para equipa de renegociação para contato posterior.</p>
+    </div>
+    <div class="item">
+        <p class="title">High Usage</p>
+        <p>O padrão de consumo de um cliente pode levar a um nível de custos excessivo ou inclusivamente afetar a integridade da rede e a experiência de outros consumidores.</p>
+        <p>O departamento de High Usage efectua um controlo de consumos e poderá proceder ao bloqueio ou degradação dos serviços em situações em que a utilização do serviço pelo cliente sai dos padrões estabelecidos.</p>
+        <p>Esta análise é feita sobre os serviços de Internet, Telefone, Videoclube e Móvel.</p>
+        <p>No início do mês seguinte será lançada a respetiva ordem para repor o serviço. </p>
+        <p>É possível fazer a consulta dos consumos de todos os serviços referidos.</p>
+    </div>
+    <div class="item">
+        <p class="title">INTERNET</p>
+        <p>A partir do controlo dos consumos, o serviço de um cliente poderá ser bloqueado ou degradado se for verificado que seu o padrão de consumo de NET afeta a integridade da rede.</p>
+        <p>No início do mês seguinte é reposta a normalidade do serviço.</p>
+        <p>As ações sobre o serviço do cliente podem ser de degradação ou suspensão do serviço, de acordo com os seguintes critérios:</p>
+        <p>Clientes Não Whitelist (generalidade dos clientes):</p>
+        <p>Com consumos de DOWNLOAD: a partir de 1,5 TB será aplicada uma degradação de serviços (S-) e enviado alerta via email/SMS ao cliente; a partir de 2 TB será aplicada uma suspensão de serviços (V-).</p>
+        <p>Com consumos de UPLOAD: a partir de 800 GB será aplicada uma degradação de serviços (S-) e enviado alerta via email/SMS ao cliente; a partir de 1 TB será aplicada uma suspensão de serviços (V-).</p>
+        <p>Clientes Whitelist (apenas aplicável a clientes B2B):</p>
+        <p>Com consumos de 80% do limite definido na WL de cada cliente de: DOWNLOAD, será efetuado um contacto ao cliente, por parte da equipa Qualidade Business, por forma a alertar o cliente; UPLOAD, será efetuado um contacto ao cliente, por parte da equipa Qualidade Business, por forma a alertar o cliente.</p>
+        <p>Com consumos de 100% do limite definido na WL de cada cliente de: DOWNLOAD, será aplicada uma degradação de serviços (S-); UPLOAD, será aplicada uma degradação de serviços (S-).</p>
+        <p>O cliente nunca deve ser informado dos níveis de consumo que geram cada ação. </p>
+        <p>Não é possível identificar imediatamente o cliente que se encontra em Whitelist, esta informação poderá ser fornecida pela linha High Usage.</p>
+        <p>Validação de alteração de serviço por High Usage:</p>
+        <p>Em Procable, na página 5 podem se verificar as ordens correspondentes ao High Usage:</p>
+        <p>Ordens de Degradação: S- NET ACÇÃO (degradação do serviço); S+ NET REGUL (reposição da velocidade).</p>
+        <p>Ordens de Suspensão: V- NET ACTION (suspensão do serviço); V+ NET REGUL (reativação do serviço).</p>
+        <p>Os clientes Não Whitelist podem ser identificados a partir dos comentários da página 15 em Procable:</p>
+        <p>Ordens S-: «« Acção Internet »» Nota Interna: cliente em análise // Caso o Cliente contacte sobre este assunto, por favor informar cliente que verificamos que o seu padrao de consumo de Internet afeta a integridade da rede...</p>
+        <p>Ordens V-: «« Acção Internet »» Nota Interna: cliente em análise // Caso o Cliente contacte sobre este assunto, por favor informar cliente que verificamos que o seu padrao de consumo de Internet afeta a integridade da rede...</p>
+        <p>Procedimento a seguir em caso de contacto por parte do cliente:</p>
+        <p>Um cliente com alteração nos serviços por High Usage pode atribuí-las a questões técnicas.</p>
+        <p>No contacto do cliente, devem ser seguidas as regras abaixo:</p>
+        <p>Se existir throttling / suspensão de serviço, não deverá ser agendada deslocação técnica mas sim informar o cliente em conformidade:</p>
+        <p>Dia útil entre as 9h-13h e 14h-18h - contactar o 928080686 ou 928080468 (nunca informar estes números ao cliente) e expor a situação. O assistente da linha de High Usage dará as indicações a seguir.</p>
+        <p>Restantes horários - na impossibilidade de contacto com linha de High Usage, encaminhar ticket via Nexus com descrição completa da questão.</p>
+        <p>Quando a ordem S- ou V- coincide com deslocação de técnico para ver outra avaria, que não High Usage, deve dar-se ordem S+ / V+ para que a visita seja conclusiva;</p>
+        <p>Quando existir uma ordem para assistência ao serviço de internet agendada (83 em Procable) com data prevista para o futuro, o sistema não deverá aplicar ordens S- / V- relativas a High Usage.</p>
+        <p>Caso um cliente Não Whitelist contacte e se verifique que existe ordens "S-"NET ACÇÃO (degradação de serviço) ou "V-"NET ACTION (suspensão de serviço), deve ser informado do motivo da degradação:</p>
+        <p>“Verificámos que o seu padrão de consumo de Internet afeta a integridade da rede, pelo que aplicámos a Política de Utilização Responsável que passa pela redução da sua velocidade de acesso.”</p>
+        <p>Alertar o cliente se existir faturação em atraso.</p>
+    </div>
+    <div class="item">
+        <p class="title">TELEFONE</p>
+        <p>A partir do controlo de consumos pode-se proceder ao bloqueio ou degradação dos serviços, se for verificado que o padrão de consumo do serviço de telefone fixo do cliente apresenta custos elevados para o mesmo.</p>
+        <p>Caso a equipa de High Usage não consiga contactar o cliente, pode existir um bloqueio do serviço de telefone sem aviso prévio.</p>
+        <p>As ações sobre o serviço do cliente podem ser confirmadas a partir das ordens na página 5 em Procable:</p>
+        <p>Ordens inseridas manualmente: I- (Iphone -); I+ (Iphone +).</p>
+        <p>Ordens inseridas automaticamente: Z- (SUSPEN.AUT. TEL); Z+ (REACTI.AUT. TEL).</p>
+        <p>Também podem ser identificadas a partir dos comentários da página 15 em Procable:</p>
+        <p>«« High Usage Iphone »» Nota Interna: cliente em análise por SAC High Usage // Caso o Cliente contacte sobre este assunto, por favor informar cliente que se trata de uma anomalia e a mesma encontra-se em resolução...</p>
+        <p>Um cliente com alteração nos serviços por High Usage pode atribuí-las a questões técnicas. Se nos contactar nesse sentido, devem ser seguidas as regras abaixo:</p>
+        <p>Nunca deve ser feita ordem AT em Procable a um cliente com um NCOS de High Usage, pois vai alterar o mesmo para “0” (zero), ficando o cliente com disponibilidade total para realizar chamadas;</p>
+        <p>Não deve ser agendada uma deslocação no caso de cliente ser considerado High Usage.</p>
+        <p>Nunca deve ser alterado o NCOS em Nexus.</p>
+        <p>Procedimento a seguir em caso de contacto por parte do cliente:</p>
+        <p>Dia útil entre as 9h-13h e 14h-18h - contactar o 928080686 ou 928080468 (nunca informar estes números ao cliente) e expor a situação. O assistente da linha de High Usage dará as indicações a seguir.</p>
+        <p>Restantes horários - na impossibilidade de contacto com linha de High Usage ou caso o cliente Whitelist ligue para obter informação, encaminhar ticket via Nexus com descrição completa da questão.</p>
+        <p>Nunca deve ser transmitido ao cliente que foi a empresa que bloqueou os serviços ou que provocou esta situação. Na impossibilidade de dar uma resposta imediata, deverá ser informado de que se trata de uma possível anomalia técnica.</p>
+        <p>Se é possível contacto com a linha de High Usage:</p>
+        <p>Deve-se indicar ao cliente que possivelmente se trata de uma anomalia, solicitando ao mesmo para aguardar enquanto o tema é verificado:</p>
+        <p>No caso de transferência, voltar à linha e informar cliente que a chamada vai ser transferida para um colega especializado;</p>
+        <p>Caso a equipa de High Usage não assuma a chamada, deve-se informar o cliente em conformidade com as indicações dadas por essa linha.</p>
+        <p>Não é possível contacto com a linha de High Usage e foi inserido ticket:</p>
+        <p>Indicar ao cliente que se trata de uma anomalia e que já foi efetuado um pedido de análise, pelo que será contactado o mais rapidamente possível.</p>
+    </div>
+    <div class="item">
+        <p class="title">VIDEOCLUBE (VoD)</p>
+        <p>A partir do controlo de consumos pode-se proceder ao bloqueio ou degradação dos serviços, se for verificado que o padrão de consumo de Videoclube (VoD) do cliente apresenta custos elevados para o mesmo.</p>
+        <p>Caso a equipa de High Usage não consiga contactar o cliente, pode existir um bloqueio do serviço de VoD sem aviso prévio.</p>
+        <p>As ações sobre o serviço do cliente podem ser confirmadas a partir das ordens na página 5 de Procable:</p>
+        <p>Existência de ordens D- e D+;</p>
+        <p>Na inexistência de informação em Procable devem ser consultados os consumos em Nexus – é feito o bloqueio para consumos superiores a €50.</p>
+        <p>Um cliente com alteração nos serviços por High Usage pode atribuí-las a questões técnicas. Se nos contactar nesse sentido, devem ser seguidas as regras abaixo:</p>
+        <p>Nunca deve ser agendada uma deslocação no caso de cliente ser considerado High Usage sem consultar previamente a equipa de Revenue Management-Biling.</p>
+        <p>Procedimento a seguir em caso de contacto por parte do cliente:</p>
+        <p>Dia útil entre as 9h-13h e 14h-18h - contactar o 928080686 ou 928080468 (nunca informar este número ao cliente) e expor a situação. O assistente da linha de High Usage dará as indicações a seguir.</p>
+        <p>Restantes horários - na impossibilidade de contacto com linha de High Usage ou caso o cliente Whitelist ligue para obter informação, encaminhar ticket via Nexus com descrição completa da questão.</p>
+        <p>Nunca deve ser transmitido ao cliente que foi a empresa que bloqueou os serviços ou que provocou esta situação. Na impossibilidade de dar uma resposta imediata, deverá ser informado de que se trata de uma possível anomalia técnica.</p>
+        <p>Se é possível contacto com a linha de High Usage:</p>
+        <p>Deve-se indicar ao cliente que possivelmente se trata de uma anomalia, solicitando ao mesmo para aguardar enquanto o tema é verificado:</p>
+        <p>No caso de transferência, voltar à linha e informar cliente que a chamada vai ser transferida para um colega especializado;</p>
+        <p>Caso a equipa de High Usage não assuma a chamada, deve-se informar o cliente em conformidade com as indicações dadas por essa linha.</p>
+        <p>Não é possível contacto com a linha de High Usage e foi inserido ticket:</p>
+        <p>Indicar ao cliente que se trata de uma anomalia e que já foi efetuado um pedido de análise, pelo que será contactado o mais rapidamente possível.</p>
+    </div>
+    <div class="item">
+        <p class="title">MÓVEL</p>
+        <p>Quando o serviço móvel se encontra em High Usage (em situações em que é detetada fraude ou incoerência de dados na ficha), o estado em Nexus é apresentado como BARRADO -  Serviços » MVNO » Estado do Cartão:</p>
+        <p>O cliente recebe comunicações de voz, mas só consegue fazer chamadas para números de emergência e linha de Apoio ao Cliente.</p>
+        <p>Na página 15 de Procable é colocada a seguinte informação: "INFO HIGH USAGE - Cliente com problemas no cartão, em caso contacto abrir ticket para High Usage, fazendo referencia a numero para contato".</p>
+        <p>Esta informação não deve ser dada ao cliente; informar que se trata de uma possível anomalia técnica.</p>
+        <p>Também é possível valida que as comunicações foram restringidas através do comentário em Procable: Acao de hu para o telefone xxx xxx xxx</p>
+        <p>Após levantamento de um barramento/bloqueio, para retomar o acesso ao serviço de dados é necessário reiniciar o equipamento.</p>
+        <p>No caso de ser necessário reportar algum tema relativo a High Usage Móvel deve-se inserir ticket via Nexus.</p>
+        <p>Esta ação pode ser identificada em Procable pelo comentário: Levantamento de hu para o telefone xxx xxx xxx</p>
+    </div>
+    <div class="item">
+        <p class="title">Consulta de Consumos</p>
+        <p>É possível consultar os consumos de Internet, Telefone Fixo, Móvel e Videoclube. Essa consulta pode ser feita internamente ou pelo próprio cliente de forma autónoma a partir da sua Área de Cliente.</p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+    <div class="item">
+        <p class="title"></p>
+        <p></p>
+    </div>
+    <div class="item">
+        <p class="title"></p>
+        <p></p>
+    </div>
+    <div class="item">
+        <p class="title"></p>
+        <p></p>
+    </div>
+</section>
 </div>
 
 <div id="sidebar"></div>
@@ -536,14 +990,13 @@
         sidebar.innerHTML = '';
 
         if (matches.length > 0) {
-            content.style.display = 'block'; /* Exibe o conteúdo ao encontrar resultados */
+            content.style.display = 'none'; /* Exibe o conteúdo ao encontrar resultados */
             for (var i = 0; i < matches.length; i++) {
                 var index = matches[i] + 1;
 
                 var link = document.createElement('a');
                 link.href = '#';
-                link.textContent = items[matches[i]].getElementsByClassName('title')[0].innerText +
-                    ' - ' + searchInput;
+                link.textContent = items[matches[i]].getElementsByClassName('title')[0].innerText;
 
                 link.onclick = function (i) {
                     return function () {
@@ -562,6 +1015,7 @@
     function jumpToResult(index) {
         for (var i = 0; i < items.length; i++) {
             if (i === index) {
+                content.style.display = 'block';
                 items[i].classList.remove('hidden');
             } else {
                 items[i].classList.add('hidden');
