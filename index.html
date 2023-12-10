@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,12 +27,21 @@
         }
 
         input {
+            padding-left: 1vw;
             position: fixed;
-            top: 0;
+            top: 1vh;
             left: 30vw;
             width: 40vw;
             height: 5vh;
-            border-radius: 6px;
+            border-radius: 1em;
+            border: none;
+            box-shadow: 1px 2px 5px 1px black;
+        }
+
+        input:focus, input:focus-visible {
+            border: none;
+            border-radius: 1em;
+            box-shadow: 1px 2px 1px black;
         }
 
         /* Estilo para destacar a palavra-chave */
@@ -65,15 +74,17 @@
             left: 0;
             width: 20vw;
             overflow-y: auto;
-            padding: 1vw;
+            padding: 0 10vw 0 1vw;
             height: 100%; /* Ocupa toda a altura da janela para adicionar uma barra de rolagem */
             background-color:whitesmoke;
             display: none;
+            box-shadow: 1px 2px 5px 0px black;
+
         }
 
         p {
             text-transform: lowercase;
-            margin: 1em 0;
+            margin: 6vh 0;
             text-align: justify;
         }
 
@@ -119,7 +130,7 @@
     <p>No caso de algum dos serviços estar a menos de 3 meses do fim de fidelização é apresentada uma mensagem adicional com essa informação e sugestão para o passo seguinte:</p>
 </div>
 <div class="item">
-    <p class="title">TIPO / LAYOUT</p>
+    <p class="title">TIPO/ LAYOUT</p>
     <p>O cliente pode optar em qualquer momento por um dos três layouts de fatura que se encontram disponíveis, em formato físico (papel) ou digital (fatura eletrónica)</p>
     <p>As faturas não têm custos para o cliente, excepto se optar por fatura com detalhe máximo em papel, que terá o custo de 1,22€.</p>
     <p>FATURA SEM DETALHE</p>
@@ -161,7 +172,7 @@
         <p>Caso o cliente pretenda o cancelamento da fatura eletrónica, informar dos custos associados ao envio em papel, se aplicáveis.</p>               
     </div>
     <div class="item">
-        <p class="title">PEDIDOS/ALTERAÇÕES - fatura eletrónica</p> 
+        <p class="title">PEDIDOS/ ALTERAÇÕES - fatura eletrónica</p> 
         <p>CONSULTA:</p>
         <p>Em Nexus, consultar o estado da adesão em Faturação » Pré-adesão à Fatura Eletrónica » Consulta de Pedidos.</p>
         <p>Em Procable, consultar: Página 3 - se os campos abaixo estiverem preenchidos, cliente tem a fatura eletrónica ativa. email - endereço de email onde foi ativada a fatura eletrónica. Confirmação FE - data em que foi ativada a fatura eletrónica.</p>
@@ -177,7 +188,7 @@
         <p>No caso da fatura do cliente ter Detalhe Máximo, passa a existir um custo associado ao envio da fatura em papel de 1,22€.</p>
     </div>
     <div class="item">    
-        <p class="title">ERROS NA ADESÃO / ENVIO DE FATURA ELETRÓNICA</p>
+        <p class="title">ERROS NA ADESÃO/ ENVIO DE FATURA ELETRÓNICA</p>
         <p>Cliente indica que não recebeu email com o link para dar seguimento à adesão:</p>
         <p>Questionar se o email foi para a caixa de Spam ou lixo eletrónico; Conta Hotmail: se não for utilizada com frequência, entra em inatividade e após cliente fazer o login não irá receber os emails enviados anteriormente.</p>
         <p>Como alternativa, cliente pode ser encaminhado para fazer a adesão via área de cliente.</p>
@@ -472,7 +483,7 @@
         <p>Em caso de óbito, o reembolso só poderá ser efetuado ao Cabeça de Casal (herdeiro que administra a herança), devendo este pedido ser acompanhado pela cópia da Certidão de Óbito e da Escritura de Habilitação de Herdeiros. Esta documentação é necessária tanto para o pedido de reembolso, como para a transferência do valor a crédito para outra ficha de cliente.</p>
     </div>
     <div class="item">
-        <p class="title">REEMBOLSO LEWE/BOX IP</p>
+        <p class="title">REEMBOLSO LEWE/ BOX IP</p>
         <p>Quando existam valores a creditar/devolver a clientes com serviço Lewe ou que tenham adquirido a Box IP tem sempre de ser feito reembolso, tendo em conta as características desses produtos.</p>
         <p>Elegível para reembolso: Valor da compra de cartão (cartão ou 2ª via que nunca funcionou/não recebeu); Valor da compra Box IP (não funciona/não recebeu) - não aplicável em caso de aluguer; Indemnização por atraso de portabilidade.</p>
         <p>Não é possível efetuar reembolso de carregamentos móveis, pelo que deverão ser convertidos em aditivos. Para tal, deve ser pedida autorização à supervisão.</p>
@@ -481,7 +492,7 @@
         <p>Não deverá ser inserido pedido de crédito em CTK.</p>
     </div>
     <div class="item">
-        <p class="title">Créditos/Débitos</p>
+        <p class="title">Créditos/ Débitos</p>
         <p>A inserção de um crédito/débito visa corrigir incoerências pontuais detetadas ao nível da faturação de um cliente ou responder a pedidos de compensação devida. Antes da inserção de um crédito/débito é necessário validar se o mesmo já foi pedido ou consta em fatura. Para isso deve-se:</p>
         <p>Simular a fatura do mês seguinte em Procable para confirmar se o valor já foi lançado: Pesquisar pela ficha do cliente; Inserir f + Enter.</p>
         <p>Verificar se já foi inserido crédito/débito em CTK pelo mesmo motivo; Se o cliente reclama que a oferta não foi aplicada, verificar a existência de ordens em SacWebServer com pedido de inserção de oferta; Se confirmado que a oferta é aplicável, mas o código não está carregado deve ser solicitada a correção da página de serviços do cliente via ordem SU em SacWebServer.</p>
@@ -563,7 +574,7 @@
         <p>Os primeiros créditos, caso existam, serão incluídos nas faturas a emitir em dezembro e dirão respeito a indisponibilidades de serviços ocorridas no período de 14 a 30 de novembro.</p>
     </div>
     <div class="item">
-        <p class="title">PERDA DE DESCONTOS ASSOCIADOS A DD / FE</p>
+        <p class="title">PERDA DE DESCONTOS ASSOCIADOS A DD/ FE</p>
         <p>Os clientes podem ter descontos adicionais na sua faturação mediante a adesão a Débito Direto e Fatura Eletrónica, dependendo da campanha comercial a que aderiram (seja novos ou atuais clientes).</p>
         <p>Se o cliente reclamar que perdeu o desconto associado à adesão ao Débito Direto (DD) ou Fatura Eletrónica (FE), deve-se validar há quanto tempo deixou de o ter:</p>
         <p>Menos de 3 meses: Se voltar a ativar o DD e/ou FE, o desconto é automaticamente atribuído com efeitos retroativos, desde a data em que foi cortado; Esta atribuição automática do crédito é feita por batch no dia 1 do mês seguinte à ativação, por isso não se verifica simulando a fatura do mês seguinte; Exemplo: cliente que perdeu os descontos na fatura de fevereiro, terá o crédito automático se o DD e/ou FE estiverem ativos em sistema até 30 de abril.</p>
@@ -589,7 +600,7 @@
         <p>O cliente deve ser sempre informado que a chamada vai ser creditada.</p>
     </div>
     <div class="item">
-        <p class="title">CRÉDITO LEWE / BOX IP</p>
+        <p class="title">CRÉDITO LEWE/ BOX IP</p>
         <p>Para clientes Lewe (agrupamento M1 ou M2) e devolução do valor de compra da Box IP (agrupamento RI), não são inseridos créditos pois a devolução do valor é feita por reembolso. Existe a possibilidade de o cliente solicitar créditos relativos a outras questões da Box IP.</p>
         <p>Crédito do custo do envio da Box IP para o Centro Reparador:</p>
         <p>quando o cliente remete à sua responsabilidade o equipamento para o Centro Reparador e é reexpedido um equipamento novo:</p>
@@ -889,11 +900,230 @@
     <div class="item">
         <p class="title">Consulta de Consumos</p>
         <p>É possível consultar os consumos de Internet, Telefone Fixo, Móvel e Videoclube. Essa consulta pode ser feita internamente ou pelo próprio cliente de forma autónoma a partir da sua Área de Cliente.</p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
-        <p></p>
+        <p>INTERNET</p>
+        <p>É possível a nível interno consultar a informação sobre o consumo de tráfego de internet referente aos últimos 6 meses, conforme legalmente previsto.</p>
+        <p>A visualização dos consumos de NET é efetuada em Nexus através do ecrã Serviços > Internet > Estatísticas.</p>
+        <p>É possível visualizar três janelas temporais: Últimos 6 meses; Detalhe do Mês; Detalhe do Dia</p>
+        <p>No caso dos clientes Lousada FTTH e DST não é devolvida qualquer informação sobre consumos em Nexus.</p>
+        <p>TELEFONE FIXO E MÓVEL</p>
+        <p>A análise de consumos telefónicos e respetivo detalhe pode ser feita via Procable, a partir da consulta da fatura em Nexus no caso de clientes com detalhe máximo ativo ou o cliente pode fazê-lo de forma autónoma a partir da sua Área de Cliente.</p>
+        <p>Consulta de informação de chamadas em Procable - é feita através da análise da fatura e respetivo detalhe, de modo a validar quais as chamadas efetuadas e os valores das mesmas: </p>
+        <p>Na página 13 seleciona-se a fatura que se pretende analisar chegando-se ao ecrã:</p>
+        <p>A partir do comando “tel” chega-se ao consumo telefónico por tipo. É sempre necessário confirmar o número de telefone/telemóvel no topo da página dado o campo “tel” abranger a totalidade dos consumos de telefone efetuados pelos números associados à ficha de cliente :</p>
+        <p>Selecionando o campo que se pretende analisar chega-se ao detalhe:</p>
+        <p>Em Procable, o detalhe de chamadas na fatura, apresenta valores sem IVA: O valor total de consumos telefónicos (incluindo IVA) a fornecer ao cliente deverá ser consultado no ecrã inicial:</p>
+        <p>As chamadas facultadas ao assinante a título gratuito, incluindo chamadas para serviços de emergência ou de assistência, não devem constar da faturação detalhada. Esta norma encontra-se prevista no Artigo 8º, da Lei n.º 46/2012 de 29 de agosto. </p>
+        <p>VIDEOCLUBE (VOD)</p>
+        <p>A análise de consumos de conteúdos Videoclube (VoD) alugados pode ser feita através de Procable ou através de Nexus. O cliente também pode consultar a informação na Área de Cliente.</p>
+        <p>Consulta de informação de consumos VoD em Procable - é possível através da análise da fatura: Deve ser selecionada a fatura em questão na pag. 13:</p>
+        <p>É possível ainda detalhar os consumos efetuados pelo cliente, nomeadamente o nome do conteúdo alugado, valores p/ conteúdo e data/hora: A partir do comando “v” chega-se ao consumo de VoD por Box; A partir do comando "99" chega-se à lista de filmes alugados nessa Box. </p>
+        <p>Consulta de informação de consumos VoD em Nexus - a subscrição de determinado conteúdo pode ser validada e através da seleção da Box em questão, no separador “Compras Open Stream”</p>
+        <p>Neste ecrã é possível confirmar a data/hora de início de sessão, validando o tempo em que a mesma esteve ativa.</p>
+    </div>
+    <div class="item">
+        <p class="title">Base de Dados Partilhada (BDP)</p>
+        <p>Existe uma Base de Dados Partilhada entre as operadoras de telecomunicações que permite identificar clientes que tenham deixado dívidas, reduzindo o risco de novas adesões de potenciais devedores.</p>
+        <p>Os clientes são informados da sua inclusão na base de dados através de uma carta.</p>
+        <p>CONSULTA DE INFORMAÇÃO</p>
+        <p>Para validar se um cliente se encontra na BDP deve ser efetuada uma pesquisa em SFA, através do NIF do titular do serviço.</p>
+        <p>Esta pesquisa deve ser feita antes de qualquer nova adesão à empresa.</p>
+        <p>​Existem três resultados possíveis:</p>
+        <p>OK - não tem dívida na Base de Dados de outras operadoras, nem da empresa ou tem apenas uma fatura em aberto - pode-se avançar com a adesão;</p>
+        <p>Análise Vendas - tem dívida na empresa e deve-se encaminhar o pedido para a área de Aquisição/Vendas. O cliente deverá ser informado que o pedido se encontra em análise; </p>
+        <p>NOK - tem dívida na Base de Dados (mais de uma fatura). Cliente deverá ser informado, conforme argumentário: "O NIF que me indicou consta na base de dados partilhada dos operadores de telecomunicações. Apenas poderemos aceitar a sua adesão após regularizar a dívida com o respetivo operador".</p>
+        <p>ISENÇÃO DE INCLUSÃO E RETIRADA DE CLIENTES DA BDP</p>
+        <p>Isenção de inclusão na BDP de cliente com reclamação em curso: Colocar um código de isenção a 30 dias RC (aplicável mesmo em clientes inativos).</p>
+        <p>Apresentação de reclamação: Se o cliente apresentar uma reclamação após constar na Base de Dados e solicitar a retirada da mesma, encaminhar para sac.collections@empresa.pt com o assunto [Nº Cliente ou NIF]_Retirar da Base de dados /Urgente.</p>
+        <p>Declaração de exclusão da Base de Dados: Após regularizar a sua dívida com a empresa, o cliente pode solicitar um comprovativo em como o seu registo foi excluído da BDP. Este pedido deve ser encaminhado para sac.collections@empresa.pt que utiliza o seguinte template.</p>
+    </div>
+    <div class="item">
+        <p class="title">Códigos de Isenção</p>
+        <p>Ao colocar um código de isenção em Procable evita-se que o cliente fique sujeito à suspensão e/ou corte dos serviços durante um determinado período.</p>
+        <p>Se o cliente já estiver sem serviços, a inserção do código não terá qualquer efeito.</p>
+        <p>Os códigos de isenção evitam que os serviços sejam suspensos ou cortados, no entanto, o cliente continua a receber comunicações das ações de cobranças (ex.: cartas de suspensão), exceto se tiver solicitado acordo de pagamento.</p>
+        <p>Os códigos de isenção inseridos nas fichas de clientes, em dia de Billing geram informação interna no detalhe da fatura (não visível para o cliente), na página 13 de Procable.</p>
+        <p>A inserção dos códigos de isenção é feita na página 14 de Procable » "Opção" » "c" » "Enter"</p>
+        <p>Depois deve ser preenchido o campo "Isento" com o código específico e a respetiva data de fim associada:</p>
+    </div>
+    <div class="item">
+        <p class="title">Dados e Métodos de Pagamento</p>
+        <p>Existem várias formas de pagamento das faturas.</p>
+        <p>Envio de Comprovativo de Pagamento</p>
+        <p>Caso seja necessário comprovativo de pagamento, o cliente pode fazê-lo pelos meios disponíveis ou através da validação via TechSee.</p>
+        <p>São considerados comprovativos válidos, dependendo do modo de pagamento:</p>
+        <p>Multibanco - talão de pagamento no Multibanco.</p>
+        <p>Homebanking/MBWAY - documento impresso com indicação de "Operação concluída", "Operação com sucesso" ou "Pagamento executado, registado com n.º......"..</p>
+        <p>Loja empresa - recibo de pagamento na loja.</p>
+        <p>CTT - fatura com selo e carimbo dos CTT.</p>
+        <p>Payshop - talão do PayShop.</p>
+        <p>Cheque - extracto bancário com indicação de movimento para a empresa e qual a factura a que se refere o montante liquidado.</p>
+        <p>Vale postal - cópia do vale postal (que deve ser solicitado aquando do pagamento, na estação dos CTT) e a cópia do talão.</p>
+        <p>Transferência Bancária - documento impresso comprovativo da transferência.</p>
+        <p>Quando um cliente solicita dados para pagamento e está em Contencioso, inserir legal ticket via CTK e não informar quaisquer valores. </p>
+        <p>Após resposta à questão do cliente, sugerir a adesão ao Débito Direto para maior comodidade. </p>
+        <p>Informar o cliente que contacta a solicitar dados para pagamento da possibilidade de solicitar os mesmo através do IVR ou validar na sua área de cliente.</p>
+    </div>
+    <div class="item">    
+        <p class="title">DÉBITO DIRETO</p>
+        <p>O débito direto é processado no início de cada mês, após o processamento do Billing (emissão de fatura).</p>
+        <p>A data do primeiro débito em conta num mês coincide com a data limite de pagamento de fatura ou poderá ser posterior.</p>
+        <p>A atualização do resultado do débito reflete-se em sistema no dia seguinte a ser feito. Por exemplo, se o dia do débito é 22, no dia 23 os saldos são atualizados.</p>
+        <p>Os valores não liquidados ao final de um ciclo não acumulam para débito direto na fatura seguinte. O valor em causa deverá ser liquidado utilizando outra forma de pagamento.</p>
+        <p>Se um cliente pediu a desativação de DD, para o voltar a ativar é necessário solicitar um novo código ADC, via ticket Nexus. Nessas situação, depois de ter o ADC deverá pedir a ativação do Débito Direto via Multibanco/Homebanking ou diretamente junto da Entidade Bancária, não é possível fazê-lo através de SFA ou Área de Cliente.</p>
+        <p>Ativação e alteração de IBAN associado à ficha de cliente</p>
+        <p>A ativação e alteração do débito direto de um cliente que ainda não tenha subscrito esse método de pagamento pode ser feita de várias formas:</p>
+        <p>SFA: o cliente tem de conseguir fornecer o IBAN associado à conta durante o contacto. Campo Débito Direto: Inserir IBAN e clicar em Ativar Débito Direto.</p>
+        <p>A ativação em Procable é feita uma vez por dia (às 20h), para todos os pedidos recebidos até às 19h.</p>
+        <p>Se o cliente já tiver o DD ativo, aparece a informação deste método de pagamento já ativo, sem outra opção.</p>
+        <p>Área de Cliente (se necessário, enviar ao cliente o vídeo demonstrativo para o ajudar no processo) Pesquisar métodos de pagamento - débito direto</p>
+        <p>Multibanco/Homebanking: pode ser ativado/alterado utilizando os dados disponíveis na sua fatura: Entidade: 100895; ADC (Autorização de Débito em Conta): específica para cada ficha de cliente. Em Procable, página 1:</p>
+        <p>Para alteração da conta associada ao DD através de um ATM, o cliente deverá utilizar o cartão da conta activa para fazer a operação, não o da nova conta de onde pretende que passem a ser feitos os pagamentos.</p>
+        <p>Balcão da Entidade Bancária: a ativação/alteração pode ser feita fornecendo a Entidade e ADC.</p>
+        <p>Documento SEPA: a ativação/alteração pode ser feita mediante o envio obrigatório do documento SEPA (Formulario Debito Direto) assinado pelo titular do serviço empresa, juntamente com uma cópia do seu documento de identificação:</p>
+        <p>A documentação deve ser devolvida à empresa via e-mail, CTT ou entregue em Loja;</p>
+        <p>Para encaminhar os documentos recebidos deve ser aberto um ticket em Nexus para a área respetiva, consoante a pretensão do cliente:</p>
+        <p>Criação de novo ADC - Tesouraria (ver tipificação); Alteração de IBAN nacional - Backoffice Tesouraria (ver tipificação).</p>
+        <p>Se o cliente pretender associar uma conta com IBAN estrangeiro, apenas o pode fazer através do envio do documento SEPA. Depois deve ser encaminhado através de um ticket em Nexus para a Tesouraria.</p>
+        <p>O cliente pode solicitar que lhe seja enviado o documento SEPA, o que pode ser feito de duas formas:</p>
+        <p>E-mail (preferencial): através de Nexus; CTT: solicitado via inserção de uma ordem CM em Procable.</p>
+        <p>NOTA: as opções ao dispor do cliente para ativação/alteração do DD devem ser apresentadas pela ordem acima. O objetivo é que a adesão seja feita da forma mais rápida e com a maior autonomia possível. O envio do formulário SEPA será a última opção a apresentar, com exceção da activação de DD em contas com IBAN estrangeiro.</p>
+        <p>Desativação </p>
+        <p>Nexus: Abrir um ticket.</p>
+        <p>Multibanco/Homebanking: Entidade: 100895; ADC (Autorização de Débito em Conta): específica para cada ficha de cliente.</p>
+        <p>Podem decorrer alguns dias entre o pedido de desativação no Multibanco/Homebanking e a data efetiva da desativação do DD em Procable. Assim, pode acontecer o pagamento da fatura por DD já ter sido rejeitado, mas na página 1 o serviço ainda estar ativo.</p>
+        <p>Balcão da Entidade Bancária: Fornecendo a Entidade e ADC.</p>
+        <p>Para ver a data da desativação do serviço em Procable, ver o histórico da página 1 (hm):</p>
+        <p>Consulta </p>
+        <p>Para validar se o cliente tem o pagamento por débito direto ativo, validar a informação na página 1 de Procable. </p>
+        <p>P DÉBITO EM CONTA - o DD está ativo; F FACTURA - o pagamento será feito por outro método</p>
+        <p>O cliente poderá consultar o IBAN que tem associado à sua conta na área de cliente.</p>
+        <p>Definição de Montante Máximo a Debitar</p>
+        <p>O cliente pode definir um montante máximo para pagamento por débito direto. Este deverá ser um valor inteiro (apenas considerando o montante referente aos Euros) e terá de ser o cliente a fazê-lo através dos meios disponibilizados pela sua entidade bancária.</p>
+        <p>Se o cliente definir um valor que contenha cêntimos, este será arredondado para baixo - por exemplo, se o cliente definir €27,90, apenas será debitado da sua conta €27 e o pagamento do restante valor deverá ser feito por outro método (multibanco, por exemplo).</p>
+        <p>Se o valor a pagamento for superior ao limite definido pelo cliente, apenas será debitado o correspondente a esse máximo. O remanescente deverá ser regularizado por outro meio de pagamento.</p>
+        <p>No caso de o cliente ter definido um valor limite para o débito e/ou data limite para o final do mesmo, essa informação consta na página 1 de Procable.</p>
+        <p>Reapresentação do Débito em Conta</p>
+        <p>Se a primeira tentativa de débito do valor a pagamento não tiver sucesso, são feitas duas novas tentativas (reapresentações):</p>
+        <p>A primeira reapresentação é feita após a data de vencimento da fatura e respetivo prazo máximo para atualização dos pagamentos por DD;</p>
+        <p>As representações que não tiveram sucesso são enviadas uma 2ª vez, antes da emissão da fatura do mês seguinte;</p>
+        <p>A confirmação do resultado das reapresentações é feita até 3 dias após o seu envio, sendo atualizadas em Procable antes da emissão da fatura do mês seguinte;</p>
+        <p>Após a 2ª representação sem sucesso, é classificado como “efeito incobrável” e o pagamento por débito direto é desativado:</p>
+        <p>Na página 1 de Procable, o campo 11 passa de passa de P para F.</p>
+        <p>Quando o cliente tem o DD ativo, podem surgir os seguintes movimentos na página 13 do Procable:</p>
+        <p>D Fatura - emissão de fatura para cliente com Débito Direto ativo.</p>
+        <p>M Fatura - emissão de fatura para cliente com Débito Direto ativo, mas em que o montante da fatura excede o montante autorizado para pagamento.</p>
+        <p>P Pagamento DD - confirmação do pagamento efetuado por Débito Direto.</p>
+        <p>PS Efeito Incobrado - o banco não autorizou o pagamento da fatura por Débito Direto.</p>
+        <p>R Reapresentação - envio de novo pedido por Débito Direto ao banco.</p>
+        <p>Ver a lista completa dos motivos de rejeição de Débito Direto. Pesquisar métodos de pagamento - débito direto.</p>
+    </div>
+    <div class="item">    
+        <p class="title">MULTIBANCO</p>
+        <p>Os dados para pagamento da fatura via Multibanco (ATM) / Homebanking podem ser obtidos pelo cliente através de:</p>
+        <p>Fatura;</p>
+        <p>IVR da Linha de Apoio ao Cliente; O cliente deverá indicar Dados de Pagamento e será questionado se os pretende receber por SMS, que será depois enviado para o número móvel principal associado à sua ficha.</p>
+        <p>Área de Cliente.</p>
+        <p>Em caso de contacto, poderão ser também consultados através da fatura em Nexus ou em Procable na página 13, onde é possível obter a referência para pagamento bem como o montante:</p>
+        <p>Para efetuar o pagamento, o cliente deverá utilizar os seguintes dados na opção "Pagamento de Serviços":</p>
+        <p>Entidade: 20936; Referência: informação que consta na fatura empresa que pretende liquidar - cada referência apenas pode ser utilizada uma vez. Montante: Valor a liquidar.</p>
+        <p>Esta entidade não é válida para carregamentos móveis nem regularização de prestações de acordos de pagamento.</p>
+        <p>As referências multibanco associadas a faturas sem movimentos (débitos ou créditos) não se encontram ativas pela SIBS para rececionar pagamentos de clientes. </p>
+        <p>Referência alternativa/genérica</p>
+        <p>Caso não seja possível utilizar a referência indicada na fatura, deve ser facultada ao cliente a referência alternativa que se obtém da seguinte forma:</p>
+        <p>00 + Número de cliente, sem o último dígito.</p>
+        <p>Esta referência pode ser utilizada sem restrições pelo cliente, sendo que pode efetuar os pagamentos que necessitar com a mesma.</p>
+        <p>Este tipo de pagamentos pode ser feito mesmo após a data de vencimento das faturas e utilizando valores diferentes dos que constam em fatura.</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de 24 horas.</p>
+        <p>Se cliente o solicitar, pode ser enviada um SMS com os dados para pagamento através do SFA.</p>
+        <p>Neste SMS o montante a pagamento é o total em dívida, não sendo possível enviar informação fracionada.</p>
+    </div>
+    <div class="item">    
+        <p class="title">LOJAS empresa</p>
+        <p>Os pagamentos feitos nas lojas empresa não obrigam à apresentação da fatura.</p>
+        <p>Estão disponíveis os seguintes métodos: Numerário; Multibanco; Cheque; Cartão de Crédito / Visa (esta forma de pagamento não está disponível nas seguintes lojas: Caldas da Rainha, Portimão, Covilhã, S. João da Madeira, Viseu e Setúbal).</p>
+        <p>Este tipo de pagamentos pode ser feito mesmo após a data de vencimento das faturas e utilizando valores diferentes dos que constam em fatura.</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de 24 horas.</p>
+        <p>Consulta:</p>
+        <p>Os pagamentos feitos em loja podem ser consultados em Procable, nas páginas 6 e/ou 13: Pagamentos em numerário (dinheiro) têm a designação DN PAGAMENTO; Pagamentos em multibanco têm a designação MB LOJA;</p>
+    </div>
+    <div class="item">    
+        <p class="title">MB WAY</p>
+        <p>O pagamento de faturas via MBWAY está disponível apenas para clientes sem débito direto ativo.</p>
+        <p>Os pagamentos podem ser feitos a partir da área de cliente ou em Loja.</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de 24 horas.</p>
+        <p>Consulta:</p>
+        <p>Os pagamentos podem ser consultados em Procable na página 13:</p>
+        <p>Aparece uma primeiro movimento a 0€, para assinalar que existiu um pagamento MBWA, e só quando o mesmo é integrado aparece uma nova linha com o valor correspondente.</p>
+    </div>
+    <div class="item">    
+        <p class="title">PAYSHOP/ CTT</p>
+        <p>Para efetuar o pagamento numa PayShop ou Agência dos CTT é necessário apresentar a fatura a liquidar ou a carta de aviso de suspensão/corte onde constem os dados de pagamento.</p>
+        <p>Caso o cliente solicite, poderá ser-lhe indicado quais os Agentes PayShop mais convenientes para si.</p>
+        <p>Este tipo de pagamentos pode ser feito até dia 10 do mês seguinte ao correspondente à fatura e o cliente tem que liquidar o montante indicado na fatura.</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de: 3 dias úteis no caso da Payshop; 24h a 48h úteis em pagamentos feitos em CTT.</p>
+        <p>Consulta:</p>
+        <p>Os pagamentos feitos em CTT e PayShop podem ser consultados em Procable na página 13: (pagamento ctt)</p>
+    </div>
+    <div class="item">    
+        <p class="title">CHEQUE</p>
+        <p>Se o cliente pretender fazer um pagamento por cheque, além de se poder deslocar a uma Loja empresa pode também expedi-lo pelo correio para:</p>
+        <p>empresa Communications, S.A. // Alameda dos Oceanos, Lt 2.11.01 E // Edifício Lisboa // Parque das Nações // 1998-035 Lisboa</p>
+        <p>Ao enviar o cheque o cliente deve registar o seu número de cliente no verso do mesmo.</p>
+        <p>Este tipo de pagamentos pode ser feito mesmo após a data de vencimento das faturas e utilizando valores diferentes dos que constam em fatura.</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de 5 dias úteis, após receção do cheque.</p>
+        <p>Devolução do Cheque</p>
+        <p>No caso do cheque ser devolvido por não ser possível boa cobrança:</p>
+        <p>Se o cliente solicitar o seu redepósito, o pedido deverá ser encaminhado por ticket via Nexus para a respetiva Supervisão.</p>
+        <p>Apenas poderá ser solicitado o redepósito de um cheque uma vez e caso o cliente não tenha histórico de cheque devolvido nos últimos 6 meses.</p>
+        <p>Caso o cliente pretenda que lhe seja enviado esse cheque, deverá em primeiro lugar liquidar o montante do cheque (preferencialmente por Multibanco). Após integração do pagamento, o pedido de devolução do cheque deverá ser encaminhado por ticket via Nexus para a Tesouraria.</p>
+        <p>Sempre que um cheque é devolvido, são cobrados os seguintes gastos administrativos:</p>
+        <p>29,00€ - cheques devolvidos pelo Millennium BCP (mais 0,40€ de custos de portes de envio); 26,00€ - cheques devolvidos pela Caixa Geral de Depósitos e Novo Banco.</p>
+    </div>
+    <div class="item">    
+        <p class="title">TRANSFERÊNCIA BANCÁRIA</p>
+        <p>Para efetuar o pagamento através de transferência bancária, o cliente deverá utilizar o NIB / IBAN da empresa:</p>
+        <p>NIB - 0035 0579 0001235173048 // IBAN - PT50/0035 0579 0001235173048 // BIC ou SWIFT - CGDIPTPL</p>
+        <p>Após a transferência, é obrigatório que o cliente envie o comprovativo da mesma para a empresa, devidamente identificado com o nº de cliente, uma vez que é a única forma de alocar o pagamento à sua ficha de cliente.</p>
+        <p>Aquando da receção do comprovativo, após validar que está correcto deve ser encaminhado via ticket via Nexus para a Tesouraria.</p>
+        <p>Este tipo de pagamentos pode ser feito mesmo após a data de vencimento das faturas e utilizando valores diferentes dos que constam em fatura;</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de 3 dias úteis, após receção do comprovativo.</p>
+    </div>
+    <div class="item">    
+        <p class="title">VALE POSTAL</p>
+        <p>O pagamento por Vale Postal pode ser feito numa estação de CTT, solicitando o envio de um Vale Postal para a empresa em nome de empresa – Communications, S.A. </p>
+        <p>Deverá ser indicado o número de cliente nesse envio. </p>
+        <p>Este tipo de pagamentos pode ser feito mesmo após a data de vencimento das faturas e utilizando valores diferentes dos que constam em fatura;</p>
+        <p>O prazo máximo para atualização dos pagamentos em sistema é de 3 dias úteis. </p>
+    </div>
+    <div class="item">
+        <p class="title">Pagamentos Não Alocados</p>
+        <p>Um pagamento  é considerado não alocado quando não está associado à ficha de cliente correta e já foi ultrapassado o prazo máximo de entrada do pagamento em sistema.</p>
+        <p>Por norma, os pagamentos não alocados decorrem da utilização de dados de pagamento incorretos.</p>
+        <p>PAGAMENTO DE FATURA</p>
+        <p>A situação pode ser detetada tanto pelo cliente que fez o pagamento, como pelo cliente em cuja ficha entrou um pagamento que não foi o próprio a fazer.</p>
+        <p>CONTACTO PELO CLIENTE QUE EFETUOU O PAGAMENTO DA FATURA</p>
+        <p>Efetuar as seguintes validações:</p>
+        <p>Validar sempre os dados de pagamento utilizados mediante apresentação de comprovativo;</p>
+        <p>Verificar se foi ultrapassado o prazo máximo de entrada do pagamento em sistema de acordo com o método de pagamento do cliente;</p>
+        <p>Efetuar uma pesquisa em Nexus a fim de garantir que não foi solicitado ainda nenhum pedido de correção via ticket.</p>
+        <p>Caso não tenha havido erro ou ainda não tenha sido ultrapassado o prazo para entrada em sistema, informar cliente do prazo previsto para entrada do pagamento e que deverá aguardar.</p>
+        <p>Caso exista um erro ou já tenha sido ultrapassado o prazo para entrada em sistema e ainda não exista nenhum ticket criado:</p>
+        <p>Criar um ticket Nexus com indicação no comentário do número do cliente onde o pagamento deu entrada, caso seja possível determiná-lo.</p>
+        <p>Caso exista um erro ou já tenha sido ultrapassado o prazo para entrada em sistema e já exista um ticket criado no estado aberto:</p>
+        <p>Informar cliente que situação já se encontra reportada e deve aguardar resolução.</p>
+        <p>Pesquisar o cliente através da referência em Procable » Menu inicial de pesquisa » Nº factura » Colocar a referência que o cliente usou para pagar, substituindo o 6 pela letra que corresponde à fatura (a letra muda consoante o ano).</p>
+        <p>Ex: Referência "610254590" (P - 2023 / q - 2024 / r - 2025 / s - 2026)</p>
+        <p>Caso exista risco de suspensão e/ou corte de serviços dos clientes envolvidos no pagamento não alocado devido ao valor liquidado, deve-se inserir um código de isenção:</p>
+        <p>Código RC no cliente que efetuou o pagamento; Código CP no cliente onde o pagamento deu entrada.</p>
+        <p>CONTACTO PELO CLIENTE ONDE DEU ENTRADA O PAGAMENTO DA FATURA</p>
+        <p>Inserir ticket em Nexus, indicando em comentário que o pagamento deverá ser encaminhado para "anónimos". Este pagamento fica a aguardar identificação de forma a ser alocado na ficha de cliente correta.</p>
+        <p>CARTÃO SIM LEWE/CARREGAMENTO LEWE</p>
+        <p>COMPRA CARTÃO SIM LEWE</p>
+        <p>Sempre que, por erro na referência de pagamento, existir a necessidade de transferir o valor para outra ficha de cliente, verificar a ficha onde deu entrada o pagamento:</p>
+        <p>Se não estiver cortada - Encaminhar o pedido via ticket em Nexus para o backoffice; Se estiver cortada - Encaminhar o pedido via ticket em Nexus para transferência do valor.</p>
+        <p>Depois das devidas atualizações em Procable, encaminhar o ticket em Nexus, para o responsável do canal (Informative Customer Service).</p>
+        <p>CARREGAMENTO DE SERVIÇO LEWE</p>
+        <p>Caso o carregamento não tenha dado entrada no sistema ou o cliente se tenha enganado na referência, consultar procedimentos aqui. Pesquisar PLano lewe - CONSTRANGIMENTOS NO CARREGAMENTO</p>
     </div>
     <div class="item">
         <p class="title"></p>
